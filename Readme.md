@@ -1,7 +1,7 @@
 # Личный проект «Мишка» [![Build status][travis-image]][travis-url] [![Dependency status][dependency-image]][dependency-url]
 
 * Студент: [Ольга Баженова](https://up.htmlacademy.ru/adaptive/13/user/386911).
-* Наставник: `Неизвестно`.
+* Наставник: `Без наставника`.
 
 ---
 
@@ -54,7 +54,7 @@ git clone SSH-адрес_вашего_форка
 
 Репозиторий создан для обучения на интенсивном онлайн‑курсе «[Профессиональный HTML и CSS](https://htmlacademy.ru/intensive/adaptive)», уровень 2 от [HTML Academy](https://htmlacademy.ru).
 
-[travis-image]: https://travis-ci.org/htmlacademy-adaptive/386911-mishka.svg?branch=master
-[travis-url]: https://travis-ci.org/htmlacademy-adaptive/386911-mishka
-[dependency-image]: https://david-dm.org/htmlacademy-adaptive/386911-mishka/dev-status.svg?style=flat-square
-[dependency-url]: https://david-dm.org/htmlacademy-adaptive/386911-mishka?type=dev
+[travis-image]: https://travis-ci.org/htmlacademy-adaptive/584557-mishka.svg?branch=master
+[travis-url]: https://travis-ci.org/htmlacademy-adaptive/584557-mishka
+[dependency-image]: https://david-dm.org/htmlacademy-adaptive/584557-mishka/dev-status.svg?style=flat-square
+[dependency-url]: https://david-dm.org/htmlacademy-adaptive/584557-mishka?type=dev
