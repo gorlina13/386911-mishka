@@ -1,0 +1,73 @@
+.order-form {
+  color: #000000;
+
+  background-color: #ffffff;
+}
+
+/* В макете высота строки 16пикс, меньше, чем размер шрифта (17пикс). */
+.order-form__legend {
+  font: bold 17px/17px @font-family;
+  text-transform: uppercase;
+  color: #63d1bb;
+}
+
+.order-form__list {
+  .list-reset();
+}
+
+.order-form__radio-label,
+.order-form__checkbox-label,
+.order-form__text-label {
+  font: bold 17px/18px @font-family;
+}
+
+.order-form__text-input {
+  font: normal 17px/18px @font-family;
+  color: #444444;
+  opacity: 0.3;
+
+  &::placeholder {
+    color: #444444;
+    opacity: 0.3;
+    // opacity: 1;
+  }
+}
+
+/* В макете высота строки 16пикс, меньше, чем размер шрифта (17пикс). */
+.order-form__text-label--contacts {
+  font: bold 17px/17px @font-family;
+  text-transform: uppercase;
+  color: #63d1bb;
+}
+
+.order-form__footnote {
+  font: normal 14px/16px @font-family;
+  color: #444444;
+}
+
+@media (min-width: @tablet-width) {
+  .order-form__fieldset--color,
+  .order-form__fieldset--contacts {
+    background-color: @gray-bg-color;
+  }
+
+  /* В макете высота строки 18пикс, меньше, чем размер шрифта (19пикс). */
+  .order-form__radio-label,
+  .order-form__checkbox-label,
+  .order-form__text-label {
+    font-size: 19px;
+    line-height: 19px;
+  }
+
+  /* В макете высота строки 18пикс, меньше, чем размер шрифта (19пикс). */
+  .order-form__text-input {
+    font-size: 19px;
+    line-height: 19px;
+  }
+
+  .order-form__footnote {
+    font-size: 17px;
+    line-height: 30px;
+    text-align: right;
+  }
+}

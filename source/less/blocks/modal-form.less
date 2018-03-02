@@ -1,0 +1,27 @@
+.modal-form {
+  color: #444444;
+
+  background-color: #ffffff;
+}
+
+.modal-form__legend {
+  font: normal 15px/30px @font-family;
+  text-align: center;
+}
+
+.modal-form__list {
+  .list-reset();
+}
+
+/* В макете высота строки 16пикс, меньше, чем размер шрифта (17пикс). */
+.modal-form__radio-label {
+  font: bold 17px/17px @font-family;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@media (min-width: @tablet-width) {
+  .modal-form__legend {
+    font-size: 17px;
+  }
+}

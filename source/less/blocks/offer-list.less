@@ -1,0 +1,33 @@
+.offer-list {
+  .list-reset();
+}
+
+.offer-list__item {
+  display: none;
+}
+
+@media (min-width: @tablet-width) {
+  .offer-list__item--delivery {
+    display: block;
+
+    font: normal 15px/24px @font-family;
+    text-align: right;
+
+    color: #444444;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .offer-list__item {
+    &--new,
+    &--sale {
+      display: block;
+    }
+  }
+
+  .offer-list__link {
+    font: bold 15px/24px @font-family;
+    text-decoration: none;
+    color: #000000;
+  }
+}

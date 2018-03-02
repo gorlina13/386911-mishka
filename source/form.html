@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Мишка — Форма</title>
+    <link rel="stylesheet" href="css/style.css">
     <script>
       document.createElement( "picture" );
     </script>
@@ -11,7 +12,7 @@
   <body>
     <header class="page-header">
       <nav class="main-nav main-nav--nojs">
-        <a class="main-nav__logo logo logo--header" href="index.html">
+        <a class="main-nav__logo" href="index.html">
           <picture>
             <source media="(min-width: 1150px)" srcset="img/logo-desktop.svg">
             <source media="(min-width: 768px)" srcset="img/logo-tablet.svg">
@@ -122,11 +123,11 @@
           <ul class="order-form__list">
             <li class="order-form__item order-form__item--contacts">
               <input class="order-form__text-input order-form__text-input--contacts" type="tel" name="tel" id="tel-field" placeholder="+7 ХХХ ХХ ХХ*" required>
-              <label class="order-form__text-label order-form__text-label--tel" for="tel-field">Тел</label>
+              <label class="order-form__text-label order-form__text-label--contacts order-form__text-label--tel" for="tel-field">Тел</label>
             </li>
             <li class="order-form__item order-form__item--contacts">
               <input class="order-form__text-input order-form__text-input--contacts" type="email" name="email" id="email-field" placeholder="Ваш Email*" required>
-              <label class="order-form__text-label order-form__text-label--email" for="email-field">E-mail</label>
+              <label class="order-form__text-label order-form__text-label--contacts order-form__text-label--email" for="email-field">E-mail</label>
             </li>
           </ul>
         </fieldset>
@@ -143,7 +144,7 @@
     </main>
 
     <footer class="page-footer">
-      <a class="page-footer__logo logo logo--footer" href="index.html">
+      <a class="page-footer__logo" href="index.html">
         <img class="page-footer__logo-image" src="img/logo-footer.svg" width="102" height="34" alt="Мишка">
       </a>
       <ul class="page-footer__social-list social-list">

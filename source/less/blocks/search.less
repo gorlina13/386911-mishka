@@ -1,0 +1,17 @@
+.search__text {
+  font: bold 17px/24px @font-family;
+  color: #000000;
+
+  border: none;
+
+  &::placeholder {
+    color: #000000;
+    opacity: 1;
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .search__text {
+    display: none;
+  }
+}

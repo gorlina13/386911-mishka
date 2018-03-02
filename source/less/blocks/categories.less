@@ -1,0 +1,26 @@
+.categories__list {
+  .list-reset();
+}
+
+.categories__link {
+  display: block;
+
+  font: bold 19px/24px @font-family;
+  text-decoration: none;
+  color: #ffffff;
+
+  &--interior {
+    background-color: #63d1bb;
+  }
+
+  &--toys {
+    background-color: #56c3b2;
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .categories__link {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}

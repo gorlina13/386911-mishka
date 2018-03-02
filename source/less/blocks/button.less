@@ -1,0 +1,39 @@
+.button {
+  font: bold 18px/20px @font-family;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #444444;
+
+  background-color: #ffffff;
+  border: 2px solid #444444;
+  cursor: pointer;
+
+  &--special-product,
+  &--modal,
+  &--order-form,
+  &--make-an-order {
+    font-size: 17px;
+  }
+
+  /* В макете высота строки 16пикс, меньше, чем размер шрифта (17пикс). */
+  &--order-form,
+  &--make-an-order {
+    line-height: 17px;
+  }
+
+  /* В макете высота строки 16пикс, меньше, чем размер шрифта (17пикс). */
+  &--modal {
+    line-height: 17px;
+    color: #ffffff;
+
+    background-color: #63d1bb;
+    border: none;
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .button {
+    font-size: 17px;
+  }
+}

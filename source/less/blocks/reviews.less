@@ -1,0 +1,53 @@
+.reviews {
+  color: #444444;
+
+  background-color: #ffffff;
+}
+
+.reviews__title {
+  margin: 0;
+
+  .title();
+}
+
+.reviews__text {
+  font: normal 15px/30px @font-family;
+}
+
+.reviews__author-name {
+  font: bold 17px/24px @font-family;
+  color: #000000;
+}
+
+.reviews__author-insta-link {
+  font: normal 17px/30px @font-family;
+  text-decoration: none;
+  color: #444444;
+}
+
+@media (min-width: @tablet-width) {
+  .reviews {
+    background-image: url("/../../img/review@1x.jpg");
+    background-repeat: no-repeat;
+    background-position: left center;
+
+    @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
+      background-image: url("/../../img/review@2x.jpg");
+      background-size: 350px 458px;
+    }
+  }
+
+  .reviews__text {
+    font-size: 17px;
+  }
+
+  .reviews__author-name {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .reviews__author-name {
+    font-size: 17px;
+  }
+}
