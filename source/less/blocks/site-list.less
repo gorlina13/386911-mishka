@@ -3,19 +3,75 @@
 }
 
 .site-list__link {
+  display: block;
+  padding: 27px 30px;
+  padding-left: 76px;
+
   font: bold 17px/24px @font-family;
   text-decoration: none;
   color: #000000;
 }
 
+.site-list__item {
+  border-bottom: 1px solid @border-color;
+}
+
 @media (min-width: @tablet-width) {
+  .site-list {
+    display: flex;
+    flex-wrap: wrap;
+    order: 3;
+
+    width: 434px;
+    padding: 0 50px;
+
+    border-top: 1px solid @border-color;
+  }
+
+  .site-list__item {
+    width: 50%;
+
+    border-bottom: none;
+  }
+
   .site-list__link {
+    padding-top: 17px;
+    padding-bottom: 17px;
+    padding-left: 0;
+    padding-right: 10px;
+
     font-size: 15px;
   }
 }
 
 @media (min-width: @desktop-width) {
+  .site-list {
+    order: 0;
+
+    width: 470px;
+    padding: 0;
+
+    border: none;
+  }
+
+  .site-list__item {
+    &:nth-child(even) {
+      border-left: 1px solid @border-color;
+    }
+  }
+
   .site-list__link {
+    padding-top: 32px;
+    padding-bottom: 32px;
+
     font-size: 17px;
+  }
+
+  .site-list__item:nth-child(odd) .site-list__link {
+    padding-left: 50px;
+  }
+
+  .site-list__item:nth-child(even) .site-list__link {
+    padding-left: 33px;
   }
 }

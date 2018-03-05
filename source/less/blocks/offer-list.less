@@ -7,8 +7,22 @@
 }
 
 @media (min-width: @tablet-width) {
+  .offer-list {
+    display: flex;
+    order: 4;
+
+    width: 334px;
+    padding-right: 50px;
+
+    border-top: 1px solid @border-color;
+  }
+
   .offer-list__item--delivery {
     display: block;
+    width: 264px;
+    margin-left: auto;
+    padding-top: 17px;
+    padding-bottom: 17px;
 
     font: normal 15px/24px @font-family;
     text-align: right;
@@ -18,16 +32,34 @@
 }
 
 @media (min-width: @desktop-width) {
+  .offer-list {
+    width: 1150px;
+  }
+
   .offer-list__item {
+    &--delivery {
+      width: 266px;
+    }
+
     &--new,
     &--sale {
       display: block;
+      width: 235px;
     }
   }
 
   .offer-list__link {
+    display: block;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    padding-left: 33px;
+
     font: bold 15px/24px @font-family;
     text-decoration: none;
     color: #000000;
+  }
+
+  .offer-list__item:first-child .offer-list__link {
+    padding-left: 50px;
   }
 }
