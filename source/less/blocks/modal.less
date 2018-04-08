@@ -1,17 +1,43 @@
 .modal {
+  position: fixed;
+  z-index: 30;
+  top: 50vh;
+  left: 50%;
+
+  display: none;
+  width: 320px;
+  padding: 30px 30px 46px;
+
   color: #000000;
 
   background-color: #ffffff;
+  box-shadow: 0 5px 10px rgba(0, 1, 1, 0.25);
+
+  transform: translateX(-50%) translateY(-50%);
+
+  &--show {
+    display: block;
+  }
 }
 
 .modal__title {
+  margin: 0;
+  padding-bottom: 12px;
+
   font: bold 25px/30px @font-family;
   text-align: center;
   text-transform: uppercase;
 }
 
 @media (min-width: @tablet-width) {
+  .modal {
+    width: 566px;
+    padding: 34px 50px 46px;
+  }
+
   .modal__title {
+    padding-bottom: 15px;
+
     font-size: 30px;
     line-height: 57px;
   }

@@ -1,4 +1,69 @@
-/* В макете высота строки 18пикс, меньше, чем размер шрифта (19пикс). */
+.copyright {
+  display: block;
+  width: 260px;
+  margin: 0 auto;
+
+  padding-top: 22px;
+  padding-bottom: 23px;
+
+  font-size: 0;
+  text-align: center;
+
+  border-top: 1px solid #e5e5e5;
+  cursor: pointer;
+
+  &:active .copyright__text {
+    color: rgba(0, 0, 0, 0.3);
+  }
+
+  &:hover .copyright__logo,
+  &:focus .copyright__logo,
+  &:active .copyright__logo {
+    color: #46c1ae;
+  }
+
+  &:active .copyright__logo {
+    opacity: 0.3;
+  }
+}
+
 .copyright__text {
+  display: inline-block;
+  margin-right: 30px;
+  padding-bottom: 5px;
+
   font: bold 19px/19px @font-family;
+  text-decoration: none;
+  vertical-align: middle;
+  color: #000000;
+}
+
+.copyright__logo {
+  display: inline-block;
+  width: 27px;
+  height: 34px;
+
+  color: #63d1bb;
+  vertical-align: middle;
+}
+
+.copyright__logo-image {
+  width: 27px;
+  height: 34px;
+}
+
+@media (min-width: @tablet-width) {
+  .copyright {
+    flex-shrink: 0;
+
+    width: auto;
+    margin: 0;
+    margin-top: 6px;
+    padding-left: 30px;
+    padding-right: 50px;
+
+    text-align: left;
+
+    border: none;
+  }
 }

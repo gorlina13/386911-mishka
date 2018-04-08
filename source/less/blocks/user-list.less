@@ -14,13 +14,24 @@
 
   font: bold 17px/24px @font-family;
   text-decoration: none;
-  color: #000000;
+  color: #231f20;
+
+  &:hover,
+  &:focus {
+    color: #63d1bb;
+  }
+
+  &:active {
+    color: #63d1bb;
+  }
 }
 
 .user-list__link span {
   display: block;
   padding: 27px 0;
   padding-left: 24px;
+
+  color: #000000;
 }
 
 .user-list__icon {
@@ -29,12 +40,8 @@
 
   opacity: 0.2;
 
-  path {
-    fill: #231f20;
-  }
-
   &--cart {
-    width: 22px;
+    width: 21px;
     height: 18px;
   }
 }
@@ -42,18 +49,10 @@
 .user-list__link:hover .user-list__icon,
 .user-list__link:focus .user-list__icon {
   opacity: 1;
-
-  path {
-    fill: #63d1bb;
-  }
 }
 
 .user-list__link:active .user-list__icon {
   opacity: 0.3;
-
-  path {
-    fill: #63d1bb;
-  }
 }
 
 @media (min-width: @tablet-width) {

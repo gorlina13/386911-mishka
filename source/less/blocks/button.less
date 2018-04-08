@@ -1,4 +1,8 @@
 .button {
+  display: block;
+  width: 260px;
+  padding: 14px 10px;
+
   font: bold 18px/20px @font-family;
   text-align: center;
   text-decoration: none;
@@ -16,24 +20,63 @@
     font-size: 17px;
   }
 
-  /* В макете высота строки 16пикс, меньше, чем размер шрифта (17пикс). */
-  &--order-form,
-  &--make-an-order {
-    line-height: 17px;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: #444444;
   }
 
-  /* В макете высота строки 16пикс, меньше, чем размер шрифта (17пикс). */
+  &:hover,
+  &:focus {
+    color: #ffffff;
+  }
+
+  &:active {
+    color: rgba(255, 255, 255, 0.3);
+  }
+
   &--modal {
-    line-height: 17px;
     color: #ffffff;
 
     background-color: #63d1bb;
-    border: none;
+    border-color: transparent;
+  }
+
+  &--modal:hover,
+  &--modal:focus,
+  &--modal:active {
+    background-color: #ffffff;
+    border-color: #63d1bb;
+  }
+
+  &--modal:hover,
+  &--modal:focus {
+    color: #63d1bb;
+  }
+
+  &--modal:active {
+    color: rgba(99, 209, 187, 0.3);
   }
 }
 
 @media (min-width: @tablet-width) {
   .button {
     font-size: 17px;
+
+    &--special-product {
+      width: 290px;
+    }
+
+    &--reviews {
+      width: 175px;
+    }
+
+    &--contacts {
+      width: 230px;
+    }
+
+    &--modal {
+      width: 350px;
+    }
   }
 }

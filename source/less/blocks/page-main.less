@@ -8,7 +8,7 @@
   padding-top: 71px;
 
   &--index {
-    min-height: 282px;
+    min-height: 283px;
 
     background-color: #f9f9f9;
     background-image: url("/../../img/hero-mobile@1x.jpg");
@@ -53,6 +53,8 @@
 
 @media (min-width: @tablet-width) {
   .page-main__title-wrapper {
+    position: relative;
+
     &--index {
       min-height: 745px;
       padding-top: 153px;
@@ -69,6 +71,24 @@
     &--inner-page {
       min-height: 225px;
       padding-top: 95px;
+    }
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      z-index: 10;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      width: 100%;
+      height: 24px;
+
+      background-image: url("/../../img/bg-zigzag-fill.svg");
+      background-repeat: repeat-x;
+      background-position: -21px 12px;
+      background-size: cover;
     }
   }
 
@@ -103,6 +123,12 @@
 
     &--inner-page {
       min-height: 254px;
+    }
+
+    &::after {
+      height: 34px;
+
+      background-position: 0 16px;
     }
   }
 

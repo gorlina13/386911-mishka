@@ -1,5 +1,6 @@
 .main-nav {
   position: relative;
+  z-index: 30;
 
   width: 320px;
   margin: 0 auto;
@@ -13,7 +14,6 @@
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 2;
 
   display: block;
   width: 81px;
@@ -101,6 +101,8 @@
 
 @media (min-width: @tablet-width) {
   .main-nav {
+    z-index: 15;
+
     display: flex;
     flex-wrap: wrap;
 

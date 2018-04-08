@@ -1,26 +1,141 @@
 .categories__list {
   .list-reset();
+  width: 320px;
+  margin: 0 auto;
 }
 
 .categories__link {
+  position: relative;
+
   display: block;
+  min-height: 103px;
+  padding: 26px 30px 29px;
 
   font: bold 19px/24px @font-family;
   text-decoration: none;
   color: #ffffff;
 
+  &:hover,
+  &:focus {
+    transform: translateY(-5px);
+  }
+
+  &:active {
+    color: rgba(255, 255, 255, 0.3);
+  }
+
   &--interior {
     background-color: #63d1bb;
+  }
+
+  &--interior:hover,
+  &--interior:focus,
+  &--interior:active {
+    background-color: #59d5bc;
+  }
+
+  &--interior:hover,
+  &--interior:focus {
+    box-shadow: 0 5px 0 0 #59d5bc;
   }
 
   &--toys {
     background-color: #56c3b2;
   }
+
+  &--toys:hover,
+  &--toys:focus,
+  &--toys:active {
+    background-color: #46c1ae;
+  }
+
+  &--toys:hover,
+  &--toys:focus {
+    box-shadow: 0 5px 0 0 #46c1ae;
+  }
+
+  &::before {
+    content: "";
+
+    position: absolute;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.5;
+  }
+
+  &--interior::before {
+    top: 23px;
+    right: 36px;
+
+    width: 40px;
+    height: 62px;
+
+    background-image: url("/../../img/icon-interior.svg");
+    background-size: 40px 62px;
+  }
+
+  &--toys::before {
+    top: 21px;
+    right: 27px;
+
+    width: 60px;
+    height: 60px;
+
+    background-image: url("/../../img/icon-toy.svg");
+    background-size: 60px 60px;
+  }
+
+  &:hover::before,
+  &:focus::before {
+    opacity: 0.7;
+  }
+
+  &:active::before {
+    opacity: 0.3;
+  }
 }
 
 @media (min-width: @tablet-width) {
+  .categories__list {
+    display: flex;
+
+    width: 668px;
+    margin-top: -119px;
+  }
+
+  .categories__item {
+    width: 50%;
+  }
+
   .categories__link {
+    min-height: 119px;
+    padding: 28px 36px 31px;
+
     font-size: 20px;
     line-height: 30px;
+
+    &--interior::before {
+      top: 30px;
+
+      width: 41px;
+
+      background-size: 41px 62px;
+    }
+
+    &--toys::before {
+      top: 31px;
+      right: 34px;
+
+      height: 61px;
+
+      background-size: 60px 61px;
+    }
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .categories__list {
+    width: 1050px;
   }
 }

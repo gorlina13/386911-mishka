@@ -2,6 +2,21 @@
   display: flex;
 
   padding: 0 30px;
+
+  color: #231f20;
+
+  &:hover,
+  &:active {
+    color: #63d1bb;
+  }
+
+  &:hover .search__icon {
+    opacity: 1;
+  }
+
+  &:active .search__icon {
+    opacity: 0.3;
+  }
 }
 
 .search__icon {
@@ -14,26 +29,6 @@
   margin-right: 10px;
 
   opacity: 0.2;
-
-  path {
-    fill: #231f20;
-  }
-}
-
-.search:hover .search__icon {
-  opacity: 1;
-
-  path {
-    fill: #63d1bb;
-  }
-}
-
-.search:active .search__icon {
-  opacity: 0.3;
-
-  path {
-    fill: #63d1bb;
-  }
 }
 
 .search__text {
@@ -67,6 +62,8 @@
 
 @media (min-width: @tablet-width) {
   .search {
+    position: relative;
+
     justify-content: center;
 
     width: 83px;
@@ -74,7 +71,17 @@
   }
 
   .search__text {
-    display: none;
+    position: absolute;
+
+    visibility: hidden;
+  }
+
+  .search:active .search__text,
+  .search:hover .search__text {
+    top: 100%;
+    left: 0;
+
+    visibility: visible;
   }
 
   .search__icon {
