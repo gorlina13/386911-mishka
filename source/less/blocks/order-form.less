@@ -1,18 +1,67 @@
 .order-form {
+  width: 320px;
+  margin: 0 auto;
+  padding-bottom: 55px;
+
   color: #000000;
 
   background-color: #ffffff;
 }
 
-/* В макете высота строки 16пикс, меньше, чем размер шрифта (17пикс). */
+.order-form__fieldset {
+  position: relative;
+
+  margin: 0;
+  padding: 0 30px 31px;
+
+  border: none;
+
+  &--type {
+    padding-bottom: 29px;
+  }
+
+  &--addition {
+    padding-bottom: 13px;
+  }
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    top: 8px;
+    right: 30px;
+
+    width: 198px;
+    height: 1px;
+
+    background-color: #62d1ba;
+  }
+}
+
 .order-form__legend {
+  position: relative;
+  z-index: 5;
+
+  float: left;
+  width: auto;
+  padding-bottom: 24px;
+  padding-right: 16px;
+
   font: bold 17px/17px @font-family;
   text-transform: uppercase;
   color: #63d1bb;
+
+  background-color: #ffffff;
+}
+
+.order-form__fieldset--name .order-form__legend {
+  padding-bottom: 28px;
 }
 
 .order-form__list {
   .list-reset();
+
+  clear: both;
 }
 
 .order-form__radio-label,
@@ -21,53 +70,551 @@
   font: bold 17px/18px @font-family;
 }
 
-.order-form__text-input {
-  font: normal 17px/18px @font-family;
-  color: #444444;
-  opacity: 0.3;
+.order-form__radio-label,
+.order-form__checkbox-label {
+  position: relative;
 
-  &::placeholder {
-    color: #444444;
-    opacity: 0.3;
-    // opacity: 1;
+  display: block;
+  padding-left: 62px;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    left: 2px;
+    top: 2px;
+
+    width: 36px;
+    height: 36px;
+
+    box-shadow: 0 0 0 2px #444444;
   }
 }
 
-/* В макете высота строки 16пикс, меньше, чем размер шрифта (17пикс). */
+.order-form__radio-label {
+  min-height: 42px;
+  padding-top: 9px;
+  padding-bottom: 15px;
+
+  &::before {
+    border: 10px solid #ffffff;
+    border-radius: 50%;
+  }
+}
+
+.order-form__checkbox-label {
+  min-height: 40px;
+  padding-top: 12px;
+  padding-bottom: 10px;
+  margin-bottom: 21px;
+
+  &::before {
+    border: 10px solid transparent;
+  }
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    left: 9px;
+    top: 12px;
+
+    display: none;
+    width: 22px;
+    height: 10px;
+
+    border-bottom: 2px solid #000000;
+    border-left: 2px solid #000000;
+    transform: rotate(-45deg);
+  }
+}
+
+.order-form__item--color:last-child .order-form__checkbox-label {
+  margin-bottom: 0;
+}
+
+.order-form__radio:checked + .order-form__radio-label::before {
+  background-color: #62d1ba;
+}
+
+.order-form__checkbox:checked + .order-form__checkbox-label::after {
+  display: block;
+}
+
+.order-form__radio-label:hover::before,
+.order-form__radio:focus + .order-form__radio-label::before,
+.order-form__checkbox-label:hover::before,
+.order-form__checkbox:focus + .order-form__checkbox-label::before {
+  box-shadow: 0 0 0 2px #62d1ba;
+}
+
+.order-form__radio-label:active::before,
+.order-form__checkbox-label:active::before {
+  box-shadow: 0 0 0 2px rgba(68, 68, 68, 0.3);
+}
+
+.order-form__item {
+  &--name,
+  &--contacts {
+    display: flex;
+    flex-wrap: wrap-reverse;
+  }
+
+  &--name {
+    margin-bottom: 22px;
+  }
+
+  &--contacts {
+    margin-bottom: 31px;
+  }
+
+  &--name:last-child,
+  &--contacts:last-child {
+    margin-bottom: 0;
+  }
+
+  &--contacts:not(:first-child) {
+    position: relative;
+  }
+
+  &--contacts:not(:first-child)::before {
+    content: "";
+
+    position: absolute;
+    top: 8px;
+    right: 0;
+
+    width: 198px;
+    height: 1px;
+
+    background-color: #62d1ba;
+  }
+
+  &--name .order-form__text-label {
+    margin-bottom: 4px;
+  }
+
+  &--name .order-form__text-input,
+  &--contacts .order-form__text-input {
+    height: 48px;
+    padding: 11px 10px 17px 0;
+    border: none;
+    border-bottom: 2px solid #000000;
+  }
+
+  &--contacts .order-form__text-input {
+    position: relative;
+    z-index: 8;
+
+    padding-right: 44px;
+  }
+}
+
+.order-form__textarea {
+  height: 142px;
+  padding: 15px;
+  clear: both;
+  overflow: hidden;
+  resize: none;
+
+  border: 2px solid #444444;
+}
+
+.order-form__text-input {
+  width: 260px;
+
+  font: normal 17px/18px @font-family;
+  color: #444444;
+
+  background-color: transparent;
+
+  &::placeholder {
+    color: rgba(68, 68, 68, 0.3);
+    opacity: 1;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: #62d1ba;
+  }
+
+  &:hover + .order-form__text-label--contacts,
+  &:focus + .order-form__text-label--contacts,
+  &:active + .order-form__text-label--contacts {
+    color: #62d1ba;
+  }
+}
+
 .order-form__text-label--contacts {
-  font: bold 17px/17px @font-family;
-  text-transform: uppercase;
-  color: #63d1bb;
+  position: relative;
+  z-index: 5;
+
+  width: 260px;
+  margin-bottom: 10px;
+
+  color: rgba(0, 0, 0, 0.2);
+
+  & span {
+    width: auto;
+    padding-right: 23px;
+
+    font: bold 17px/17px @font-family;
+    text-transform: uppercase;
+    color: #63d1bb;
+
+    background-color: #ffffff;
+  }
+}
+
+.order-form__icon {
+  position: absolute;
+
+  display: block;
+
+  &--tel {
+    right: 8px;
+    bottom: -40px;
+
+    width: 25px;
+    height: 24px;
+  }
+
+  &--email {
+    right: 4px;
+    bottom: -48px;
+
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.order-form__submit {
+  padding: 0 30px;
 }
 
 .order-form__footnote {
+  display: block;
+  padding-bottom: 31px;
+
   font: normal 14px/16px @font-family;
   color: #444444;
 }
 
+.order-form__button {
+  margin: 0 auto;
+}
+
 @media (min-width: @tablet-width) {
-  .order-form__fieldset--color,
-  .order-form__fieldset--contacts {
+  .order-form {
+    width: auto;
+    margin: 0;
+    padding-bottom: 50px;
+  }
+
+  .order-form__fieldset-wrapper {
     background-color: #f1f1f1;
   }
 
-  /* В макете высота строки 18пикс, меньше, чем размер шрифта (19пикс). */
-  .order-form__radio-label,
-  .order-form__checkbox-label,
-  .order-form__text-label {
-    font-size: 19px;
-    line-height: 19px;
+  .order-form__fieldset {
+    width: 768px;
+    margin: 0 auto;
+    padding: 50px;
+
+    &--color {
+      padding-bottom: 26px;
+    }
+
+    &--name,
+    &--contacts {
+      padding-top: 48px;
+    }
+
+    &--addition {
+      padding-bottom: 53px;
+    }
+
+    &::before {
+      display: none;
+    }
+
+    &::after {
+      content: "";
+
+      display: table;
+      clear: both;
+    }
   }
 
-  /* В макете высота строки 18пикс, меньше, чем размер шрифта (19пикс). */
+  .order-form__legend {
+    width: 140px;
+    padding-top: 17px;
+
+    background-color: transparent;
+  }
+
+  .order-form__fieldset--name .order-form__legend {
+    padding-top: 19px;
+  }
+
+  .order-form__list {
+    float: right;
+    width: 501px;
+    clear: none;
+  }
+
+  .order-form__fieldset--color .order-form__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .order-form__fieldset--contacts .order-form__list {
+    float: none;
+    width: 100%;
+  }
+
+  .order-form__radio-label,
+  .order-form__checkbox-label {
+    min-height: 52px;
+    padding-left: 80px;
+    padding-right: 10px;
+
+    &::before {
+      width: 48px;
+      height: 48px;
+
+      border-width: 14px;
+    }
+  }
+
+  .order-form__radio-label {
+    padding-top: 15px;
+    padding-bottom: 18px;
+  }
+
+  .order-form__checkbox-label {
+    padding-top: 16px;
+    padding-bottom: 17px;
+    margin-bottom: 24px;
+
+    &::after {
+      left: 13px;
+      top: 14px;
+
+      width: 30px;
+      height: 15px;
+    }
+  }
+
+  .order-form__radio-label,
+  .order-form__checkbox-label,
+  .order-form__text-label,
   .order-form__text-input {
     font-size: 19px;
     line-height: 19px;
   }
 
+  .order-form__text-input {
+    width: 501px;
+    margin-left: auto;
+  }
+
+  .order-form__item {
+    &--type {
+      margin-bottom: 24px;
+    }
+
+    &--type:last-child {
+      margin-bottom: 0;
+    }
+
+    &--color {
+      width: 238px;
+    }
+
+    &--color:nth-child(odd) {
+      margin-right: auto;
+    }
+
+    &--contacts {
+      margin-bottom: 22px;
+    }
+
+    &--contacts:not(:first-child)::before {
+      display: none;
+    }
+
+    &--name,
+    &--contacts {
+      flex-direction: row-reverse;
+      flex-wrap: nowrap;
+    }
+
+    &--name .order-form__text-label {
+      align-self: center;
+
+      width: auto;
+      padding-right: 25px;
+      margin-bottom: 0;
+    }
+
+    &--name .order-form__text-input {
+      flex-grow: 1;
+
+      width: 334px;
+      margin-left: 0;
+    }
+
+    &--name .order-form__text-input,
+    &--contacts .order-form__text-input {
+      height: 54px;
+      padding-left: 17px;
+      padding-top: 16px;
+      padding-bottom: 17px;
+    }
+  }
+
+  .order-form__text-label--contacts {
+    width: 140px;
+    align-self: center;
+    margin: 0;
+
+    & span {
+      background-color: transparent;
+    }
+  }
+
+  .order-form__icon {
+    top: -5px;
+
+    &--tel {
+      left: 617px;
+    }
+
+    &--email {
+      left: 614px;
+    }
+  }
+
+  .order-form__textarea {
+    float: right;
+    clear: none;
+    padding-top: 13px;
+  }
+
+  .order-form__submit {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+
+    width: 768px;
+    margin: 0 auto;
+    padding: 0 50px;
+  }
+
   .order-form__footnote {
+    align-self: center;
+
+    padding-bottom: 4px;
+
     font-size: 17px;
     line-height: 30px;
     text-align: right;
+  }
+
+  .order-form__button {
+    margin-left: 0;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .order-form {
+    padding-bottom: 49px;
+  }
+
+  .order-form__fieldset {
+    width: 1150px;
+
+    &--type {
+      padding-bottom: 49px;
+    }
+
+    &--addition {
+      padding-bottom: 50px;
+    }
+  }
+
+  .order-form__legend {
+    width: 160px;
+    padding-left: 63px;
+  }
+
+  .order-form__fieldset--color .order-form__legend {
+    padding-left: 61px;
+  }
+
+  .order-form__fieldset--addition .order-form__legend {
+    width: 175px;
+  }
+
+  .order-form__list {
+    width: 875px;
+  }
+
+  .order-form__text-input {
+    width: 700px;
+  }
+
+  .order-form__item {
+    &--color {
+      width: 263px;
+    }
+
+    &--color:nth-child(odd) {
+      margin-right: 0;
+    }
+
+    &--name {
+      width: 700px;
+    }
+
+    &--name .order-form__text-input {
+      width: 525px;
+    }
+
+    &--contacts {
+      justify-content: flex-end;
+    }
+
+    &--contacts .order-form__text-input {
+      margin-left: 0;
+    }
+  }
+
+  .order-form__radio-label {
+    width: 700px;
+  }
+
+  .order-form__text-label--contacts {
+    width: 175px;
+    padding-left: 63px;
+  }
+
+  .order-form__icon {
+    &--tel {
+      left: 842px;
+    }
+
+    &--email {
+      left: 839px;
+    }
+  }
+
+  .order-form__textarea {
+    float: left;
+  }
+
+  .order-form__submit {
+    width: 800px;
   }
 }
