@@ -33,11 +33,14 @@
         <ul class="main-nav__list main-nav__list--user user-list">
           <li class="user-list__item">
             <form class="user-list__search search" action="https://echo.htmlacademy.ru" method="get">
-              <svg class="search__icon" width="18" height="18" fill="currentColor" aria-hidden="true" role="presentation">
-                <use xlink:href="img/sprite.svg#icon-search"></use>
-              </svg>
-              <input class="search__text" type="search" name="search-text" placeholder="Поиск по сайту">
+              <input class="search__text" type="search" name="search-text" id="search-text-field" placeholder="Поиск по сайту">
               <input class="search__submit visually-hidden" type="submit" name="search-submit" value="Искать">
+              <label class="search__label" for="search-text-field">
+                <svg class="search__icon" width="18" height="18" fill="currentColor" aria-hidden="true" role="presentation">
+                  <use xlink:href="img/sprite.svg#icon-search"></use>
+                </svg>
+                <span class="visually-hidden">Поиск</span>
+              </label>
             </form>
           </li>
           <li class="user-list__item">
@@ -154,7 +157,7 @@
     </main>
 
     <footer class="page-footer">
-      <a class="page-footer__logo logo logo--footer" href="index.html" aria-label="Логотип интернет-магазина «Мишка»">
+      <a class="page-footer__logo logo logo--footer" href="index.html" aria-label="Интернет-магазин «Мишка»">
         <svg class="logo__image logo__image--footer" width="102" height="34" fill="currentColor" role="img">
           <use xlink:href="img/sprite.svg#logo-footer"></use>
         </svg>
@@ -185,13 +188,14 @@
           </a>
         </li>
       </ul>
-      <a class="page-footer__copyright copyright" href="https://htmlacademy.ru/intensive/adaptive">
+      <a class="page-footer__copyright copyright" href="https://htmlacademy.ru/intensive/adaptive" aria-label="Переход на сайт в HTML Academy">
         <b class="copyright__text">Разработано</b>
-        <div class="copyright__logo" aria-label="Переход на сайт в HTML Academy">
+        <span class="copyright__logo">
           <svg class="copyright__logo-image" width="27" height="34" fill="currentColor" role="img">
             <use xlink:href="img/sprite.svg#logo-htmlacademy"></use>
           </svg>
-        </div>
+          <span class="visually-hidden">HTML Academy</span>
+        </span>
       </a>
     </footer>
 
