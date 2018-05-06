@@ -13,6 +13,10 @@
   border: 2px solid #444444;
   cursor: pointer;
 
+  &--make-an-order {
+    width: 192px;
+  }
+
   &--special-product,
   &--modal,
   &--order-form,
@@ -78,6 +82,18 @@
 
     &--modal {
       width: 350px;
+    }
+
+    &--make-an-order {
+      width: 584px;
+    }
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .button {
+    &--make-an-order {
+      width: 230px;
     }
   }
 }

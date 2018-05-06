@@ -2,14 +2,15 @@
 
 function initMap() {
   var myLatLng = {lat: 59.938549, lng: 30.322993};
-  var map = new google.maps.Map(document.querySelector('.contacts__map-canvas'), {
+  var map = new google.maps.Map(document.querySelector('.contacts__map'), {
     zoom: 17,
-    center: myLatLng
+    center: myLatLng,
+    scrollwheel: false
   });
 
   var pin = {
     url: 'img/icon-map-pin.svg',
-    scaledSize: new google.maps.Size(100, 100),
+    scaledSize: new google.maps.Size(67, 100),
   };
 
   var marker = new google.maps.Marker({
