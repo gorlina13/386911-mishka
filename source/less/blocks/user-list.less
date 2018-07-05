@@ -21,26 +21,26 @@
   &:active {
     color: #63d1bb;
   }
-}
 
-.user-list__link span {
-  display: block;
-  padding: 27px 0;
-  padding-left: 24px;
+  & span {
+    display: block;
+    padding: 27px 0;
+    padding-left: 24px;
 
-  color: #000000;
-}
+    color: #000000;
+  }
 
-.user-list__link[href]:hover span {
-  opacity: 0.6;
-}
+  &[href]:hover span {
+    opacity: 0.6;
+  }
 
-.user-list__link[href]:focus span {
-  opacity: 0.6;
-}
+  &[href]:focus span {
+    opacity: 0.6;
+  }
 
-.user-list__link[href]:active span {
-  opacity: 0.3;
+  &[href]:active span {
+    opacity: 0.3;
+  }
 }
 
 .user-list__icon {
@@ -53,15 +53,15 @@
     width: 20px;
     height: 19px;
   }
-}
 
-.user-list__link:hover .user-list__icon,
-.user-list__link:focus .user-list__icon {
-  opacity: 1;
-}
+  .user-list__link[href]:hover &,
+  .user-list__link[href]:focus & {
+    opacity: 1;
+  }
 
-.user-list__link:active .user-list__icon {
-  opacity: 0.3;
+  .user-list__link[href]:active & {
+    opacity: 0.3;
+  }
 }
 
 @media (min-width: @tablet-width) {

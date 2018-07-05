@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-  <html lang="ru">
+<html lang="ru">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -37,14 +37,14 @@
         </ul>
         <ul class="main-nav__list main-nav__list--user user-list">
           <li class="user-list__item">
-            <form class="user-list__search search" action="https://echo.htmlacademy.ru" method="get">
+            <form class="user-list__search search" action="https://echo.htmlacademy.ru" method="post">
               <input class="search__text" type="search" name="search-text" id="search-text-field" placeholder="Поиск по сайту">
               <input class="search__submit visually-hidden" type="submit" name="search-submit" value="Искать">
               <label class="search__label" for="search-text-field">
                 <svg class="search__icon" width="18" height="18" fill="currentColor" aria-hidden="true" role="presentation">
                   <use xlink:href="#for-s-icon-search"></use>
                 </svg>
-                <span class="visually-hidden">Найти</span>
+                <span class="visually-hidden">Поиск</span>
               </label>
             </form>
           </li>
@@ -212,7 +212,7 @@
       </a>
     </footer>
 
-    <div class="modal">
+    <section class="modal">
       <h2 class="modal__title">Добавить в&nbsp;корзину</h2>
       <form class="modal__form modal-form" action="https://echo.htmlacademy.ru" method="post">
         <p class="modal-form__legend">Выберите размер:</p>
@@ -232,7 +232,7 @@
         </ul>
         <button class="modal-form__button button button--modal" type="submit">Добавить</button>
       </form>
-    </div>
+    </section>
     <div class="overlay"></div>
 
     <script src="js/nav.js"></script>
