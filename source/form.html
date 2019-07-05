@@ -23,51 +23,49 @@
           <picture>
             <source media="(min-width: 1150px)" srcset="img/logo-desktop.svg">
             <source media="(min-width: 768px)" srcset="img/logo-tablet.svg">
-            <img class="logo__image logo__image--main-nav" src="img/logo-mobile.svg" width="86" height="35" alt="Интернет-магазин «Мишка»: на главную страницу">
+            <img class="logo__image logo__image--main-nav" src="img/logo-mobile.svg" width="86" height="35" role="img" alt="Интернет-магазин «Мишка»: на главную страницу">
           </picture>
         </a>
         <button class="main-nav__toggle" type="button">
-          <span class="visually-hidden">Открыть/ Закрыть меню</span>
+          <span class="visually-hidden">Меню</span>
         </button>
         <ul class="main-nav__list main-nav__list--site site-list">
           <li class="site-list__item">
             <a class="site-list__link" href="catalog.html">Каталог товаров</a>
           </li>
-          <li class="site-list__item site-list__item--active">
+          <li class="site-list__item site-list__item--current">
             <a class="site-list__link">Вязание на заказ</a>
           </li>
         </ul>
+        <form class="main-nav__search search has-drop has-drop--nojs" action="https://echo.htmlacademy.ru" method="post" role="search">
+          <input class="search__text" type="search" name="search-text" id="search-text-field" placeholder="Поиск по сайту">
+          <label class="search__label" for="search-text-field">
+            <svg class="search__icon" width="18" height="18" aria-hidden="true" focusable="false">
+              <use xlink:href="#for-s-icon-search"></use>
+            </svg>
+            <span class="visually-hidden">Поиск по сайту</span>
+          </label>
+          <button class="search__submit" type="submit" name="search-submit">Найти</button>
+        </form>
         <ul class="main-nav__list main-nav__list--user user-list">
           <li class="user-list__item">
-            <form class="user-list__search search" action="https://echo.htmlacademy.ru" method="post">
-              <input class="search__text" type="search" name="search-text" id="search-text-field" placeholder="Поиск по сайту">
-              <input class="search__submit visually-hidden" type="submit" name="search-submit" value="Искать">
-              <label class="search__label" for="search-text-field">
-                <svg class="search__icon" width="18" height="18" fill="currentColor" aria-hidden="true" role="presentation">
-                  <use xlink:href="#for-s-icon-search"></use>
-                </svg>
-                <span class="visually-hidden">Поиск</span>
-              </label>
-            </form>
-          </li>
-          <li class="user-list__item">
-            <a class="user-list__link user-list__link--cart" href="#">
-              <svg class="user-list__icon user-list__icon--cart" width="20" height="19" fill="currentColor" aria-hidden="true" role="presentation">
+            <a class="user-list__link" href="#">
+              <svg class="user-list__icon user-list__icon--cart" width="20" height="19" aria-hidden="true" focusable="false">
                 <use xlink:href="#for-s-icon-cart"></use>
               </svg>
-              <span>Корзина: пока пуста</span>
+              <span class="user-list__text">Корзина: пока пуста</span>
             </a>
           </li>
         </ul>
-        <ul class="main-nav__list offer-list">
-          <li class="offer-list__item offer-list__item--new">
-            <a class="offer-list__link" href="#">Новые поступления</a>
+        <ul class="main-nav__list main-nav__list--merch merch-list">
+          <li class="merch-list__item merch-list__item--new">
+            <a class="merch-list__link" href="#">Новые поступления</a>
           </li>
-          <li class="offer-list__item offer-list__item--sale">
-            <a class="offer-list__link" href="#">Распродажа</a>
+          <li class="merch-list__item merch-list__item--sale">
+            <a class="merch-list__link" href="#">Распродажа</a>
           </li>
-          <li class="offer-list__item offer-list__item--delivery">Бесплатная доставка по России</li>
         </ul>
+        <b class="main-nav__delivery delivery">Бесплатная доставка по России</b>
       </nav>
     </header>
 
@@ -148,7 +146,7 @@
                 <input class="order-form__text-input" type="tel" name="tel" id="tel-field" placeholder="+7 ХХХ ХХ ХХ*" required>
                 <label class="order-form__text-label order-form__text-label--contacts" for="tel-field">
                   <span>Тел</span>
-                  <svg class="order-form__icon order-form__icon--tel" width="25" height="24" fill="currentColor" aria-hidden="true" role="presentation">
+                  <svg class="order-form__icon order-form__icon--tel" width="25" height="24" fill="currentColor" aria-hidden="true" focusable="false">
                     <use xlink:href="#for-s-icon-phone"></use>
                   </svg>
                 </label>
@@ -157,7 +155,7 @@
                 <input class="order-form__text-input" type="email" name="email" id="email-field" placeholder="Ваш Email*" required>
                 <label class="order-form__text-label order-form__text-label--contacts" for="email-field">
                   <span>E-mail</span>
-                  <svg class="order-form__icon order-form__icon--email" width="32" height="32" fill="currentColor" aria-hidden="true" role="presentation">
+                  <svg class="order-form__icon order-form__icon--email" width="32" height="32" fill="currentColor" aria-hidden="true" focusable="false">
                     <use xlink:href="#for-s-icon-mail"></use>
                   </svg>
                 </label>
@@ -179,28 +177,28 @@
 
     <footer class="page-footer">
       <a class="page-footer__logo logo logo--footer" href="index.html" aria-label="Интернет-магазин «Мишка»: на главную страницу">
-        <svg class="logo__image logo__image--footer" width="102" height="34" fill="currentColor" role="img">
+        <svg class="logo__image logo__image--footer" width="102" height="34" fill="currentColor" role="img" focusable="false">
           <use xlink:href="#for-s-logo-footer"></use>
         </svg>
       </a>
       <ul class="page-footer__social-list social-list">
         <li class="social-list__item">
           <a class="social-list__link social-list__link--instagram" href="https://www.instagram.com" aria-label="Мы в Инстаграме">
-            <svg class="social-list__icon social-list__icon--instagram" width="22" height="21" fill="currentColor" aria-hidden="true" role="presentation">
+            <svg class="social-list__icon social-list__icon--instagram" width="22" height="21" fill="currentColor" aria-hidden="true" focusable="false">
               <use xlink:href="#for-s-icon-insta"></use>
             </svg>
           </a>
         </li>
         <li class="social-list__item">
           <a class="social-list__link social-list__link--facebook" href="https://www.facebook.com" aria-label="Мы в Фейсбуке">
-            <svg class="social-list__icon social-list__icon--facebook" width="15" height="28" fill="currentColor" aria-hidden="true" role="presentation">
+            <svg class="social-list__icon social-list__icon--facebook" width="15" height="28" fill="currentColor" aria-hidden="true" focusable="false">
               <use xlink:href="#for-s-icon-fb"></use>
             </svg>
           </a>
         </li>
         <li class="social-list__item">
           <a class="social-list__link social-list__link--twitter" href="https://twitter.com" aria-label="Мы в Твиттере">
-            <svg class="social-list__icon social-list__icon--twitter" width="24" height="20" fill="currentColor" aria-hidden="true" role="presentation">
+            <svg class="social-list__icon social-list__icon--twitter" width="24" height="20" fill="currentColor" aria-hidden="true" focusable="false">
               <use xlink:href="#for-s-icon-twitter"></use>
             </svg>
           </a>
@@ -209,7 +207,7 @@
       <a class="page-footer__copyright copyright" href="https://htmlacademy.ru/intensive/adaptive" aria-label="Разработано в HTML Academy: переход на сайт">
         <b class="copyright__text">Разработано</b>
         <span class="copyright__logo">
-          <svg class="copyright__logo-image" width="27" height="34" fill="currentColor" role="img">
+          <svg class="copyright__logo-image" width="27" height="34" fill="currentColor" role="img" focusable="false">
             <use xlink:href="#for-s-logo-htmlacademy"></use>
           </svg>
         </span>
