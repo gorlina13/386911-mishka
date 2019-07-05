@@ -3,6 +3,17 @@
   padding: 0;
 
   list-style: none;
+
+  & li::before {
+    content: "\200B";
+
+    position: absolute;
+  }
+}
+
+.break-word() {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .title() {

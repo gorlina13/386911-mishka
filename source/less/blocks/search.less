@@ -1,54 +1,75 @@
 .search {
   display: flex;
 
-  padding: 0 30px;
+  .break-word();
+  color: #000000;
 
-  color: #231f20;
+  background-color: #ffffff;
+  border-bottom: 1px solid @border-color;
+}
 
-  &:hover,
-  &:active {
-    color: #63d1bb;
+.search__label {
+  flex-shrink: 0;
+  flex-basis: auto;
+  order: 1;
+  display: flex;
+  align-items: center;
+
+  width: 18.75%;
+  min-height: 78px;
+  padding-top: 3px;
+  padding-left: 9.375%;
+}
+
+.search__icon {
+  flex-shrink: 0;
+  flex-basis: auto;
+
+  display: block;
+  width: 18px;
+  height: 18px;
+
+  fill: #221f1f;
+  opacity: 0.2;
+
+  .search:hover &,
+  .search.has-focus &,
+  .search__text:focus ~ .search__label &,
+  .search:active & {
+    fill: #63d1bb;
   }
 
-  &:hover .search__icon {
+  .search:focus-within & {
+    fill: #63d1bb;
     opacity: 1;
   }
 
-  &:active .search__icon {
+  .search:hover &,
+  .search.has-focus &,
+  .search__text:focus ~ .search__label & {
+    opacity: 1;
+  }
+
+  .search:active & {
     opacity: 0.3;
   }
 }
 
-.search__label {
-  align-self: center;
-  flex-shrink: 0;
-  order: 1;
-
-  width: 18px;
-  height: 18px;
-  margin-top: 3px;
-  margin-left: 2px;
-  margin-right: 10px;
-}
-
-.search__icon {
-  width: 18px;
-  height: 18px;
-
-  opacity: 0.2;
-}
-
 .search__text {
+  flex-shrink: 0;
+  flex-basis: auto;
   order: 2;
 
-  width: 230px;
+  display: block;
+  width: 81.25%;
   height: 78px;
-  padding: 27px 10px;
-  padding-left: 16px;
+  padding: 27px 9.375%;
+  padding-left: 5%;
 
-  font: bold 17px/24px @font-family;
+  font: 700 17px/24px @font-family;
   color: #000000;
 
+  background-color: transparent;
   border: none;
 
   &::placeholder {
@@ -57,59 +78,140 @@
   }
 
   &:focus::placeholder {
+    color: #000000;
     opacity: 0.6;
   }
 
-  &:focus ~ .search__label {
-    color: #63d1bb;
+  .search:hover &::placeholder,
+  .search.has-focus &::placeholder {
+    color: #000000;
+    opacity: 0.6;
   }
 
-  &:focus ~ .search__label .search__icon {
-    opacity: 1;
+  .search:focus-within &::placeholder {
+    color: #000000;
+    opacity: 0.6;
+  }
+
+  .search:active &::placeholder {
+    color: #000000;
+    opacity: 0.3;
   }
 }
 
-.search:hover .search__text::placeholder {
-  opacity: 0.6;
-}
-
-.search:active .search__text::placeholder {
-  opacity: 0.3;
-}
-
-.search__submit:focus + .search__label {
-  color: #63d1bb;
-}
-
-.search__submit:focus + .search__label .search__icon {
-  opacity: 1;
+.search__submit {
+  display: none;
 }
 
 @media (min-width: @tablet-width) {
   .search {
     position: relative;
 
-    justify-content: center;
+    flex-shrink: 0;
+    flex-basis: auto;
 
-    width: 83px;
-    padding: 37px 0 33px;
-  }
+    width: 84px;
 
-  .search__text {
-    position: absolute;
-
-    visibility: hidden;
-  }
-
-  .search:active .search__text,
-  .search:hover .search__text {
-    top: 100%;
-    left: 0;
-
-    visibility: visible;
+    border: none;
   }
 
   .search__label {
-    margin: 0;
+    align-items: flex-start;
+
+    width: 100%;
+    min-height: 88px;
+    padding: 37px 15% 33px;
+
+    border-left: 1px solid @border-color;
+    border-right: 1px solid @border-color;
+  }
+
+  .search__icon {
+    margin: 0 auto;
+  }
+
+  // Видимый и доступный инпут (в макете отсутствует на планшете и десктопе)
+  .search__text {
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    width: 300%;
+    height: 80px;
+    padding-left: 19.0476%;
+    padding-right: 19.0476%;
+
+    background-color: #ffffff;
+    border: 1px solid @border-color;
+  }
+
+  // Доступно спрятанный инпут
+  .search:not(:hover):not(:active):not(.has-focus) .search__text:not(:focus) {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+
+    border: 0;
+
+    white-space: nowrap;
+
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+
+  // Видимая и доступная кнопка (при включенном JS)
+  .search__submit {
+    position: absolute;
+    top: 100%;
+    left: 300%;
+
+    display: block;
+    width: 120%;
+    padding: 27px 19.0476%;
+
+    font: 700 17px/24px @font-family;
+    text-align: center;
+    color: inherit;
+
+    background-color: #ffffff;
+    border: 1px solid @border-color;
+    border-left-color: transparent;
+
+    &:hover,
+    &:focus {
+      color: rgba(0, 0, 0, 0.6);
+    }
+
+    &:active {
+      color: rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  // Без JS работает только инпут
+  .has-drop--nojs .search__submit {
+    display: none;
+  }
+
+  // Свойство display не переопределяется, чтобы работало правило ^^выше^^!
+  // Доступно спрятанная кнопка (при включенном JS)
+  .search:not(:hover):not(:active):not(.has-focus) .search__submit:not(:focus) {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+
+    border: 0;
+
+    white-space: nowrap;
+
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
   }
 }

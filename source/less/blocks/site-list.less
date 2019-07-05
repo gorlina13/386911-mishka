@@ -1,53 +1,64 @@
 .site-list {
   .list-reset();
-}
-
-.site-list__link {
-  display: block;
-  padding: 27px 30px;
-  padding-left: 76px;
-
-  font: bold 17px/24px @font-family;
-  text-decoration: none;
+  .break-word();
   color: #000000;
 
-  &[href]:hover,
-  &[href]:focus {
-    opacity: 0.6;
-  }
-
-  &[href]:active {
-    opacity: 0.3;
-  }
+  background-color: #ffffff;
 }
 
 .site-list__item {
   border-bottom: 1px solid @border-color;
 }
 
+.site-list__link {
+  display: block;
+  padding: 27px 9.375%;
+  padding-left: 23.75%;
+
+  font: 700 17px/24px @font-family;
+  text-decoration: none;
+  color: inherit;
+
+  &[href]:hover,
+  &:focus {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  &[href]:active {
+    color: rgba(0, 0, 0, 0.3);
+  }
+}
+
 @media (min-width: @tablet-width) {
   .site-list {
+    flex-shrink: 0;
+    flex-basis: auto;
+    order: 4;
     display: flex;
     flex-wrap: wrap;
-    order: 3;
 
-    width: 434px;
-    padding: 0 50px;
+    width: 50%;
+    padding-left: 6.51%;
 
+    background-color: transparent;
     border-top: 1px solid @border-color;
   }
 
   .site-list__item {
-    width: 50%;
+    flex-shrink: 0;
+    flex-basis: auto;
+    flex-grow: 1;
 
-    border-bottom: none;
+    width: 43%;
+
+    border: none;
   }
 
   .site-list__link {
     padding-top: 17px;
     padding-bottom: 17px;
     padding-left: 0;
-    padding-right: 10px;
+    padding-right: 6%;
 
     font-size: 15px;
   }
@@ -55,15 +66,20 @@
 
 @media (min-width: @desktop-width) {
   .site-list {
-    order: 0;
+    order: -1;
 
-    width: 470px;
+    width: 40.8696%;
     padding: 0;
 
+    background-color: #ffffff;
     border: none;
   }
 
   .site-list__item {
+    flex-grow: 0;
+
+    width: 50%;
+
     &:nth-child(even) {
       border-left: 1px solid @border-color;
     }
@@ -76,11 +92,11 @@
     font-size: 17px;
 
     .site-list__item:nth-child(odd) & {
-      padding-left: 50px;
+      padding-left: 21.2766%;
     }
 
     .site-list__item:nth-child(even) & {
-      padding-left: 33px;
+      padding-left: 14.0426%;
     }
   }
 }

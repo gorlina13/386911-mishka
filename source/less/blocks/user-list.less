@@ -1,5 +1,9 @@
 .user-list {
   .list-reset();
+  .break-word();
+  color: #000000;
+
+  background-color: #ffffff;
 }
 
 .user-list__item {
@@ -8,45 +12,42 @@
 
 .user-list__link {
   display: flex;
-  align-items: center;
 
-  padding: 0 30px;
-
-  font: bold 17px/24px @font-family;
+  font: 700 17px/24px @font-family;
   text-decoration: none;
-  color: #231f20;
+  color: inherit;
 
-  &:hover,
-  &:focus,
-  &:active {
-    color: #63d1bb;
-  }
+  & .user-list__text {
+    flex-shrink: 0;
+    flex-basis: auto;
 
-  & span {
     display: block;
+    width: 81.25%;
     padding: 27px 0;
-    padding-left: 24px;
-
-    color: #000000;
+    padding-right: 9.375%;
+    padding-left: 5%;
   }
 
-  &[href]:hover span {
-    opacity: 0.6;
+  &[href]:hover .user-list__text,
+  &:focus .user-list__text {
+    color: rgba(0, 0, 0, 0.6);
   }
 
-  &[href]:focus span {
-    opacity: 0.6;
-  }
-
-  &[href]:active span {
-    opacity: 0.3;
+  &[href]:active .user-list__text {
+    color: rgba(0, 0, 0, 0.3);
   }
 }
 
 .user-list__icon {
-  align-self: center;
   flex-shrink: 0;
+  flex-basis: auto;
+  align-self: center;
 
+  display: block;
+  margin-left: 9.375%;
+  margin-right: auto;
+
+  fill: #221f1f;
   opacity: 0.2;
 
   &--cart {
@@ -54,11 +55,14 @@
     height: 19px;
   }
 
-  .user-list__link[href]:hover & {
-    opacity: 1;
+  .user-list__link[href]:hover &,
+  .user-list__link:focus &,
+  .user-list__link[href]:active & {
+    fill: #63d1bb;
   }
 
-  .user-list__link[href]:focus & {
+  .user-list__link[href]:hover &,
+  .user-list__link:focus & {
     opacity: 1;
   }
 
@@ -69,48 +73,39 @@
 
 @media (min-width: @tablet-width) {
   .user-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    order: 2;
+    flex-shrink: 0;
+    flex-basis: auto;
 
-    width: 398px;
-    margin-left: auto;
-    padding-right: 50px;
+    width: 40.885%;
   }
 
   .user-list__item {
-    display: flex;
-
-    border-bottom: none;
-    border-left: 1px solid @border-color;
+    border: none;
   }
 
   .user-list__link {
-    padding-right: 0;
+    padding-left: 9.873%;
+    padding-right: 15.924%;
 
-    opacity: 1;
-    text-align: right;
+    & .user-list__text {
+      width: 85.837%;
+      padding: 32px 0;
+      padding-left: 4.292%;
 
-    &--cart {
-      width: 263px;
+      text-align: right;
     }
   }
 
-  .user-list__link span {
-    padding: 32px 0;
-    padding-left: 30px;
+  .user-list__icon {
+    align-self: stretch;
+
+    margin-left: 0;
+    margin-top: 36px;
   }
 }
 
 @media (min-width: @desktop-width) {
   .user-list {
-    width: 400px;
-  }
-
-  .user-list__link {
-    &--cart {
-      width: 265px;
-    }
+    width: 27.304%;
   }
 }

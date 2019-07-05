@@ -1,0 +1,35 @@
+.delivery {
+  display: none;
+  .break-word();
+  color: #000000;
+
+  background-color: transparent;
+}
+
+@media (min-width: @tablet-width) {
+  .delivery {
+    flex-shrink: 0;
+    flex-basis: auto;
+    order: 5;
+
+    display: block;
+    width: 50%;
+    padding: 17px 6.51%;
+
+    font: 400 15px/24px @font-family;
+    text-align: right;
+    color: #444444;
+
+    border-top: 1px solid @border-color;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .delivery {
+    order: 0;
+
+    width: 34%;
+    padding-left: 4.348%;
+    padding-right: 4.348%;
+  }
+}

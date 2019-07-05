@@ -1,10 +1,8 @@
 .main-nav {
   position: relative;
-  z-index: 50;
+  z-index: 15;
 
-  width: 320px;
-  margin: 0 auto;
-
+  .break-word();
   color: #000000;
 
   background-color: transparent;
@@ -14,8 +12,8 @@
   position: absolute;
   top: 0;
   right: 0;
+  right: calc(~"9.375% - 30px"); /* stylelint-disable-line */
 
-  display: block;
   width: 81px;
   height: 79px;
   padding: 0;
@@ -36,8 +34,8 @@
   width: 20px;
   height: 2px;
 
-  background-color: #231f20;
-  box-shadow: 0 6px 0 0 #231f20, 0 12px 0 0 #231f20;
+  background-color: @burger-color;
+  box-shadow: 0 6px 0 0 @burger-color, 0 12px 0 0 @burger-color;
 }
 
 .main-nav--opened .main-nav__toggle {
@@ -52,7 +50,7 @@
     width: 27px;
     height: 2px;
 
-    background-color: #231f20;
+    background-color: @burger-color;
   }
 
   &::before {
@@ -70,34 +68,53 @@
 }
 
 @media (max-width: @mobile-width-only) {
-  .main-nav--opened .main-nav__list--site,
-  .main-nav--opened .main-nav__list--user {
-    display: block;
+  .main-nav--opened {
+    & .main-nav__list--site,
+    & .main-nav__list--user {
+      display: block;
+    }
+
+    & .main-nav__search {
+      display: flex;
+    }
   }
 
-  .main-nav--nojs ul.main-nav__list--site,
-  .main-nav--nojs ul.main-nav__list--user {
-    display: block;
+  .main-nav--nojs {
+    & ul.main-nav__list--site,
+    & ul.main-nav__list--user {
+      display: block;
+    }
+
+    & form.main-nav__search {
+      display: flex;
+    }
+
+    & .main-nav__toggle {
+      display: none;
+    }
   }
 
-  .main-nav--nojs .main-nav__toggle {
-    display: none;
+  .main-nav--closed {
+    & .main-nav__list--site,
+    & .main-nav__list--user,
+    & .main-nav__search {
+      display: none;
+    }
   }
 
-  .main-nav--closed .main-nav__list--site,
-  .main-nav--closed .main-nav__list--user {
-    display: none;
+  .main-nav__logo,
+  .main-nav__toggle,
+  .main-nav__list--site,
+  .main-nav__search {
+    z-index: 50;
   }
 }
 
 @media (min-width: @tablet-width) {
   .main-nav {
-    z-index: 15;
-
     display: flex;
     flex-wrap: wrap;
 
-    width: 768px;
     margin-bottom: -58px;
   }
 
@@ -108,6 +125,8 @@
 
 @media (min-width: @desktop-width) {
   .main-nav {
-    width: 1150px;
+    max-width: @desktop-width;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
