@@ -11,13 +11,25 @@
   }
 }
 
+.fix-list() {
+  list-style: none;
+
+  & li::before {
+    content: "\200B";
+
+    position: absolute;
+  }
+}
+
 .break-word() {
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
 
 .title() {
-  font: bold 25px/30px @font-family;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 30px;
   color: #000000;
 
   @media (min-width: @tablet-width) {

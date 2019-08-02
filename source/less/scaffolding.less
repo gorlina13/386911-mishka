@@ -4,8 +4,7 @@
     local("Open Sans"),
     local("OpenSans"),
     local("Open-Sans"),
-    local("Open_Sans");
-  src:
+    local("Open_Sans"),
     url("../fonts/opensans.woff2") format("woff2"),
     url("../fonts/opensans.woff") format("woff");
   font-weight: 400;
@@ -19,8 +18,7 @@
     local("Open Sans Bold"),
     local("OpenSansBold"),
     local("Open-Sans-Bold"),
-    local("Open_Sans_Bold");
-  src:
+    local("Open_Sans_Bold"),
     url("../fonts/opensansbold.woff2") format("woff2"),
     url("../fonts/opensansbold.woff") format("woff");
   font-weight: 700;
@@ -44,9 +42,14 @@ body {
   padding: 0;
 
   font-family: @font-family;
-  color: #000000;
+  font-size: 17px;
+  line-height: 24px;
+  font-weight: 400;
+  color: @body-color;
 
-  background-color: #ffffff;
+  .break-word();
+
+  background-color: @body-background-color;
 }
 
 img {
