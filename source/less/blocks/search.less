@@ -1,10 +1,9 @@
 .search {
+  position: relative;
+
   display: flex;
 
-  .break-word();
-  color: #000000;
-
-  background-color: #ffffff;
+  background-color: @body-background-color;
   border-bottom: 1px solid @border-color;
 }
 
@@ -34,7 +33,7 @@
 
   .search:hover &,
   .search.has-focus &,
-  .search__text:focus ~ .search__label &,
+  .search__input:focus ~ .search__label &,
   .search:active & {
     fill: #63d1bb;
   }
@@ -46,7 +45,7 @@
 
   .search:hover &,
   .search.has-focus &,
-  .search__text:focus ~ .search__label & {
+  .search__input:focus ~ .search__label & {
     opacity: 1;
   }
 
@@ -55,7 +54,7 @@
   }
 }
 
-.search__text {
+.search__input {
   flex-shrink: 0;
   flex-basis: auto;
   order: 2;
@@ -66,35 +65,37 @@
   padding: 27px 9.375%;
   padding-left: 5%;
 
-  font: 700 17px/24px @font-family;
-  color: #000000;
+  font-weight: 700;
+  font-size: inherit;
+  line-height: inherit;
+  color: @body-color;
 
   background-color: transparent;
   border: none;
 
   &::placeholder {
-    color: #000000;
+    color: @body-color;
     opacity: 1;
   }
 
   &:focus::placeholder {
-    color: #000000;
+    color: @body-color;
     opacity: 0.6;
   }
 
   .search:hover &::placeholder,
   .search.has-focus &::placeholder {
-    color: #000000;
+    color: @body-color;
     opacity: 0.6;
   }
 
   .search:focus-within &::placeholder {
-    color: #000000;
+    color: @body-color;
     opacity: 0.6;
   }
 
   .search:active &::placeholder {
-    color: #000000;
+    color: @body-color;
     opacity: 0.3;
   }
 }
@@ -103,13 +104,14 @@
   display: none;
 }
 
+@media (max-width: @mobile-width-only) {
+  .search {
+    z-index: 55;
+  }
+}
+
 @media (min-width: @tablet-width) {
   .search {
-    position: relative;
-
-    flex-shrink: 0;
-    flex-basis: auto;
-
     width: 84px;
 
     border: none;
@@ -130,8 +132,8 @@
     margin: 0 auto;
   }
 
-  // Видимый и доступный инпут (в макете отсутствует на планшете и десктопе)
-  .search__text {
+  // Инпут, которого не было в макетах (планшет и десктоп)
+  .search__input {
     position: absolute;
     top: 100%;
     left: 0;
@@ -141,14 +143,12 @@
     padding-left: 19.0476%;
     padding-right: 19.0476%;
 
-    background-color: #ffffff;
+    background-color: @body-background-color;
     border: 1px solid @border-color;
   }
 
-  // Доступно спрятанный инпут
-  .search:not(:hover):not(:active):not(.has-focus) .search__text:not(:focus) {
-    position: absolute;
-
+  // Инпут доступно спрятан, пока не нужен пользователю (без JS и с JS)
+  .search:not(:hover):not(:active):not(.has-focus) .search__input:not(:focus) {
     width: 1px;
     height: 1px;
     margin: -1px;
@@ -163,7 +163,7 @@
     overflow: hidden;
   }
 
-  // Видимая и доступная кнопка (при включенном JS)
+  // Кнопка поиска, которой не было в макетах
   .search__submit {
     position: absolute;
     top: 100%;
@@ -173,34 +173,34 @@
     width: 120%;
     padding: 27px 19.0476%;
 
-    font: 700 17px/24px @font-family;
+    font-weight: 700;
+    font-size: inherit;
+    line-height: inherit;
     text-align: center;
     color: inherit;
 
-    background-color: #ffffff;
+    background-color: @body-background-color;
     border: 1px solid @border-color;
     border-left-color: transparent;
 
     &:hover,
     &:focus {
-      color: rgba(0, 0, 0, 0.6);
+      color: fade(@body-color, 60%);
     }
 
     &:active {
-      color: rgba(0, 0, 0, 0.3);
+      color: fade(@body-color, 30%);
     }
   }
 
-  // Без JS работает только инпут
+  // Без JS работает инпут, кнопки нет.
   .has-drop--nojs .search__submit {
     display: none;
   }
 
   // Свойство display не переопределяется, чтобы работало правило ^^выше^^!
-  // Доступно спрятанная кнопка (при включенном JS)
+  // Кнопка доступно спрятана, пока не нужна (при включенном JS)
   .search:not(:hover):not(:active):not(.has-focus) .search__submit:not(:focus) {
-    position: absolute;
-
     width: 1px;
     height: 1px;
     margin: -1px;

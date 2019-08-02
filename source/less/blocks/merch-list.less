@@ -1,16 +1,12 @@
 .merch-list {
   display: none;
-  .list-reset();
-  .break-word();
-  color: #000000;
+  padding: 0;
 
-  background-color: transparent;
+  .fix-list();
 }
 
 @media (min-width: @desktop-width) {
   .merch-list {
-    flex-shrink: 0;
-    flex-basis: auto;
     display: flex;
     flex-wrap: wrap;
     width: 66%;
@@ -31,17 +27,23 @@
     padding-bottom: 17px;
     padding-left: 14.0426%;
 
-    font: 700 15px/24px @font-family;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: inherit;
     text-decoration: none;
-    color: #000000;
+    color: inherit;
+
+    &[href] {
+      cursor: pointer;
+    }
 
     &[href]:hover,
     &:focus {
-      color: rgba(0, 0, 0, 0.6);
+      opacity: 0.6;
     }
 
     &[href]:active {
-      color: rgba(0, 0, 0, 0.3);
+      opacity: 0.3;
     }
 
     .merch-list__item:nth-child(3n+1) & {

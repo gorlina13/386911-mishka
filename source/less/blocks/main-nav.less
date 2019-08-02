@@ -1,11 +1,9 @@
 .main-nav {
   position: relative;
-  z-index: 15;
+}
 
-  .break-word();
-  color: #000000;
-
-  background-color: transparent;
+.main-nav__list {
+  margin: 0;
 }
 
 .main-nav__toggle {
@@ -34,8 +32,8 @@
   width: 20px;
   height: 2px;
 
-  background-color: @burger-color;
-  box-shadow: 0 6px 0 0 @burger-color, 0 12px 0 0 @burger-color;
+  background-color: @hamburger-color;
+  box-shadow: 0 6px 0 0 @hamburger-color, 0 12px 0 0 @hamburger-color;
 }
 
 .main-nav--opened .main-nav__toggle {
@@ -50,7 +48,7 @@
     width: 27px;
     height: 2px;
 
-    background-color: @burger-color;
+    background-color: @hamburger-color;
   }
 
   &::before {
@@ -63,63 +61,64 @@
   }
 }
 
-.main-nav__list a[href] {
-  cursor: pointer;
-}
-
 @media (max-width: @mobile-width-only) {
-  .main-nav--opened {
-    & .main-nav__list--site,
-    & .main-nav__list--user {
-      display: block;
-    }
-
-    & .main-nav__search {
-      display: flex;
-    }
+  .main-nav__toggle {
+    z-index: 55;
   }
 
-  .main-nav--nojs {
-    & ul.main-nav__list--site,
-    & ul.main-nav__list--user {
-      display: block;
-    }
-
-    & form.main-nav__search {
-      display: flex;
-    }
-
-    & .main-nav__toggle {
-      display: none;
-    }
+  .main-nav--nojs .main-nav__toggle {
+    display: none;
   }
 
-  .main-nav--closed {
-    & .main-nav__list--site,
-    & .main-nav__list--user,
-    & .main-nav__search {
-      display: none;
-    }
+  .main-nav--closed:not(.main-nav--nojs) .main-nav__list {
+    display: none;
   }
 
-  .main-nav__logo,
-  .main-nav__toggle,
-  .main-nav__list--site,
-  .main-nav__search {
-    z-index: 50;
+  .main-nav--closed:not(.main-nav--nojs) .main-nav__search {
+    display: none;
   }
 }
 
 @media (min-width: @tablet-width) {
   .main-nav {
+    z-index: 15;
+
     display: flex;
     flex-wrap: wrap;
 
     margin-bottom: -58px;
   }
 
+  .main-nav__logo {
+    flex-shrink: 0;
+    flex-grow: 1;
+    flex-basis: auto;
+
+    margin-right: auto;
+  }
+
   .main-nav__toggle {
     display: none;
+  }
+
+  .main-nav__list {
+    flex-shrink: 0;
+    flex-basis: auto;
+  }
+
+  .main-nav__list--site {
+    order: 4;
+  }
+
+  .main-nav__search {
+    flex-shrink: 0;
+    flex-basis: auto;
+  }
+
+  .main-nav__delivery {
+    flex-shrink: 0;
+    flex-basis: auto;
+    order: 5;
   }
 }
 
@@ -128,5 +127,13 @@
     max-width: @desktop-width;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .main-nav__list--site {
+    order: -1;
+  }
+
+  .main-nav__delivery {
+    order: 0;
   }
 }

@@ -1,9 +1,9 @@
 .user-list {
-  .list-reset();
-  .break-word();
-  color: #000000;
+  padding: 0;
 
-  background-color: #ffffff;
+  .fix-list();
+
+  background-color: @body-background-color;
 }
 
 .user-list__item {
@@ -13,29 +13,35 @@
 .user-list__link {
   display: flex;
 
-  font: 700 17px/24px @font-family;
+  font-weight: 700;
+  font-size: inherit;
+  line-height: inherit;
   text-decoration: none;
   color: inherit;
 
-  & .user-list__text {
-    flex-shrink: 0;
-    flex-basis: auto;
-
-    display: block;
-    width: 81.25%;
-    padding: 27px 0;
-    padding-right: 9.375%;
-    padding-left: 5%;
+  &[href] {
+    cursor: pointer;
   }
 
-  &[href]:hover .user-list__text,
-  &:focus .user-list__text {
-    color: rgba(0, 0, 0, 0.6);
+  &[href]:hover,
+  &:focus {
+    color: fade(@body-color, 60%);
   }
 
-  &[href]:active .user-list__text {
-    color: rgba(0, 0, 0, 0.3);
+  &[href]:active {
+    color: fade(@body-color, 30%);
   }
+}
+
+.user-list__text {
+  flex-shrink: 0;
+  flex-basis: auto;
+
+  display: block;
+  width: 81.25%;
+  padding: 27px 0;
+  padding-right: 9.375%;
+  padding-left: 5%;
 }
 
 .user-list__icon {
@@ -73,9 +79,6 @@
 
 @media (min-width: @tablet-width) {
   .user-list {
-    flex-shrink: 0;
-    flex-basis: auto;
-
     width: 40.885%;
   }
 
@@ -86,26 +89,26 @@
   .user-list__link {
     padding-left: 9.873%;
     padding-right: 15.924%;
+  }
 
-    & .user-list__text {
-      width: 85.837%;
-      padding: 32px 0;
-      padding-left: 4.292%;
+  .user-list__text {
+    width: 85.837%;
+    padding: 32px 0;
+    padding-left: 4.292%;
 
-      text-align: right;
-    }
+    text-align: right;
   }
 
   .user-list__icon {
     align-self: stretch;
 
     margin-left: 0;
-    margin-top: 36px;
+    margin-top: 35px;
   }
 }
 
 @media (min-width: @desktop-width) {
   .user-list {
-    width: 27.304%;
+    width: 27.5%;
   }
 }
