@@ -1,17 +1,23 @@
-.categories__list {
-  .list-reset();
-  width: 320px;
+.categories {
+  .fix-list();
   margin: 0 auto;
+  padding: 0;
+}
+
+.categories__title {
+  margin: 0;
 }
 
 .categories__link {
   position: relative;
 
-  display: block;
+  display: flex;
   min-height: 103px;
-  padding: 26px 30px 29px;
+  padding: 26px 9.375% 29px;
 
-  font: bold 19px/24px @font-family;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: inherit;
   text-decoration: none;
   color: #ffffff;
 
@@ -66,7 +72,7 @@
 
   &--interior::before {
     top: 23px;
-    right: 36px;
+    right: 11.25%;
 
     width: 40px;
     height: 62px;
@@ -77,7 +83,7 @@
 
   &--toys::before {
     top: 21px;
-    right: 27px;
+    right: 8.4375%;
 
     width: 60px;
     height: 60px;
@@ -96,27 +102,49 @@
   }
 }
 
-@media (min-width: @tablet-width) {
-  .categories__list {
-    display: flex;
+.categories__link > :first-child {
+  flex-shrink: 0;
+  flex-basis: auto;
+}
 
-    width: 668px;
-    margin-top: -119px;
+.categories__link::after {
+  content: "";
+
+  flex-shrink: 0;
+  flex-basis: auto;
+
+  display: block;
+  width: calc(~"100% - 130px");
+}
+
+@media (max-width: @mobile-width-only) {
+  .categories {
+    max-width: 668px;
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .categories {
+    display: flex;
   }
 
   .categories__item {
+    flex-shrink: 0;
+    flex-basis: auto;
+
     width: 50%;
   }
 
   .categories__link {
     min-height: 119px;
-    padding: 28px 36px 31px;
+    padding: 28px 10.0778% 31px;
 
     font-size: 20px;
     line-height: 30px;
 
     &--interior::before {
       top: 30px;
+      right: 11%;
 
       width: 41px;
 
@@ -125,7 +153,7 @@
 
     &--toys::before {
       top: 31px;
-      right: 34px;
+      right: 10%;
 
       height: 61px;
 
@@ -135,7 +163,20 @@
 }
 
 @media (min-width: @desktop-width) {
-  .categories__list {
-    width: 1050px;
+  .categories {
+    max-width: 1050px;
+  }
+
+  .categories__link {
+    padding-left: 36px;
+    padding-right: 36px;
+
+    &--interior::before {
+      right: 36px;
+    }
+
+    &--toys::before {
+      right: 35px;
+    }
   }
 }
