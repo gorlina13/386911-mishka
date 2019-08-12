@@ -1,0 +1,287 @@
+.favorite {
+  position: relative;
+
+  padding: 0 9.375%;
+  padding-top: 27px;
+  padding-bottom: 44px;
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    right: 0;
+
+    height: 0;
+    padding-top: 2%;
+
+    background-image: url("../img/bg-zigzag-line.svg");
+    background-repeat: repeat-x;
+    background-position: -5px bottom;
+    background-size: contain;
+  }
+}
+
+.favorite__title {
+  margin: 0;
+  margin-bottom: 6px;
+
+  .title();
+}
+
+.favorite__subtitle {
+  display: block;
+  margin-bottom: 22px;
+
+  font-weight: 700;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: @mishka-color;
+}
+
+.favorite__description {
+  margin: 0;
+  margin-bottom: 18px;
+
+  font-size: 15px;
+  color: @second-color;
+}
+
+.favorite__table {
+  width: 100%;
+  margin-bottom: 28px;
+
+  font-size: 15px;
+  line-height: 20px;
+  color: @second-color;
+
+  border-collapse: collapse;
+}
+
+.favorite__td {
+  padding: 9px 0 10px;
+  padding-right: 10px;
+
+  border-bottom: 1px solid @border-color;
+
+  &--parameter {
+    width: 37.6923%;
+  }
+
+  &--value {
+    width: 62.3077%;
+  }
+}
+
+.favorite__figure {
+  margin: 0;
+  margin-bottom: 24px;
+}
+
+.favorite__image {
+  display: block;
+  width: 100%;
+}
+
+.favorite__price {
+  margin: 0;
+  margin-bottom: 26px;
+
+  font-weight: 700;
+  text-align: center;
+  color: @second-color;
+}
+
+.favorite__button {
+  width: 100%;
+}
+
+@media (min-width: 426px) and (max-width: @mobile-width-only) {
+  .favorite__figure {
+    max-width: 426px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .favorite__button {
+    max-width: 292px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .favorite {
+    display: flex;
+    flex-wrap: wrap;
+
+    padding: 45px 6.5104% 69px;
+
+    &::after {
+      bottom: 0;
+
+      background-position: -10px center;
+    }
+  }
+
+  .favorite__title {
+    flex-shrink: 0;
+    flex-basis: auto;
+    align-self: flex-end;
+
+    width: 75%;
+    margin-left: -3px;
+    margin-bottom: 49px;
+    padding-right: 6%;
+  }
+
+  .favorite__subtitle {
+    flex-shrink: 0;
+    flex-basis: auto;
+    align-self: flex-end;
+
+    width: 125px;
+    margin-left: auto;
+    margin-bottom: 49px;
+    padding-bottom: 4px;
+
+    line-height: 17px;
+    text-align: center;
+  }
+
+  .favorite__main-info {
+    flex-shrink: 0;
+    flex-basis: auto;
+    align-self: flex-start;
+
+    width: 50%;
+    margin-bottom: 144px;
+    padding-right: 6.5868%;
+  }
+
+  .favorite__description {
+    margin-bottom: 36px;
+
+    font-size: 17px;
+    line-height: 30px;
+  }
+
+  .favorite__table {
+    margin-bottom: 0;
+  }
+
+  .favorite__td {
+    &--parameter {
+      width: 33.5616%;
+    }
+
+    &--value {
+      width: 66.4384%;
+    }
+  }
+
+  .favorite__figure {
+    position: relative;
+
+    flex-shrink: 0;
+    flex-basis: auto;
+
+    width: 50%;
+    height: 0;
+    margin-top: 8px;
+    margin-bottom: 0;
+
+    padding-bottom: 60.479%;
+  }
+
+  .favorite__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+  }
+
+  .favorite__buy {
+    flex-shrink: 0;
+    flex-basis: auto;
+
+    width: 50%;
+    margin-right: 50%;
+    margin-top: -110px;
+    padding-right: 6.5868%;
+  }
+
+  .favorite__price {
+    margin-bottom: 34px;
+
+    font-size: 20px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .favorite {
+    max-width: @desktop-width;
+    margin: 0 auto;
+    padding-top: 71px;
+    padding-left: 50px;
+    padding-right: 50px;
+
+    &::after {
+      bottom: 14px;
+
+      margin-left: 50px;
+      margin-right: 50px;
+
+      background-position: -26px center;
+    }
+  }
+
+  .favorite__title {
+    z-index: 5;
+
+    width: 66.6666%;
+    margin-left: 0;
+    margin-right: 16.6666%;
+    padding-top: 52px;
+    padding-right: 0;
+  }
+
+  .favorite__subtitle {
+    order: -1;
+
+    width: 165px;
+    margin-left: 0;
+    margin-right: auto;
+    padding: 0 20px;
+    padding-bottom: 7px;
+  }
+
+  .favorite__main-info {
+    width: 33.3333%;
+    margin-left: 16.6666%;
+    padding-right: 5.7143%;
+  }
+
+  .favorite__description {
+    margin-bottom: 50px;
+  }
+
+  .favorite__td {
+    padding-top: 7px;
+    padding-bottom: 12px;
+  }
+
+  .favorite__figure {
+    margin-top: -158px;
+    padding-bottom: 60.5714%;
+  }
+
+  .favorite__buy {
+    width: 33.3333%;
+    margin-left: 16.6666%;
+    margin-bottom: 41px;
+    padding-right: 5.7143%;
+  }
+}
