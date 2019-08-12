@@ -66,13 +66,13 @@
           </li>
         </ul>
         <b class="main-nav__delivery delivery">Бесплатная доставка по России</b>
-      </nav>
+        </nav>
     </header>
 
-    <main class="page-main">
-      <div class="page-main__intro page-main__intro--index">
-        <div class="page-main__intro-wrapper">
-          <h1 class="page-main__title">Милые штуки ручной работы&nbsp;для&nbsp;дома</h1>
+    <main>
+      <div class="page-intro page-intro--index">
+        <div class="page-intro__wrapper">
+          <h1 class="page-title">Милые штуки ручной работы&nbsp;для&nbsp;дома</h1>
         </div>
         <ul class="categories">
           <li class="categories__item">
@@ -88,49 +88,45 @@
         </ul>
       </div>
 
-      <section class="special-product">
-        <header class="special-product__header">
-          <h2 class="special-product__title">Вязаные корзинки</h2>
-          <b class="special-product__label">Товар недели</b>
-        </header>
-        <div class="special-product__main-content">
-          <div class="special-product__info">
-            <p class="special-product__description">Экологически чистая пряжа, ручная работа. Доступны в шести расцветках и трех размерах.</p>
-            <table class="special-product__parameters">
-              <tr>
-                <td class="special-product__field">Цвет:</td>
-                <td class="special-product__value">«Тиффани»/серый</td>
-              </tr>
-              <tr>
-                <td class="special-product__field">Диаметр:</td>
-                <td class="special-product__value">25 см</td>
-              </tr>
-              <tr>
-                <td class="special-product__field">Высота:</td>
-                <td class="special-product__value">15 см</td>
-              </tr>
-            </table>
-          </div>
-          <figure class="special-product__illustration">
-            <picture>
-              <source type="image/webp" media="(min-width: 1150px)" srcset="img/triple-set-desktop@1x.webp 1x, img/triple-set-desktop@2x.webp 2x">
-              <source type="image/webp" media="(min-width: 768px)" srcset="img/triple-set-tablet@1x.webp 1x, img/triple-set-tablet@2x.webp 2x">
-              <source type="image/webp" srcset="img/triple-set-mobile@1x.webp 1x, img/triple-set-mobile@2x.webp 2x">
+      <section class="favorite">
+        <h2 class="favorite__title">Вязаные корзинки</h2>
+        <b class="favorite__subtitle">Товар недели</b>
+        <div class="favorite__main-info">
+          <p class="favorite__description">Экологически чистая пряжа, ручная работа. Доступны в шести расцветках и трех размерах.</p>
+          <table class="favorite__table">
+            <tr>
+              <td class="favorite__td favorite__td--parameter">Цвет:</td>
+              <td class="favorite__td favorite__td--value">«Тиффани»/серый</td>
+            </tr>
+            <tr>
+              <td class="favorite__td favorite__td--parameter">Диаметр:</td>
+              <td class="favorite__td favorite__td--value">25&nbsp;см</td>
+            </tr>
+            <tr>
+              <td class="favorite__td favorite__td--parameter">Высота:</td>
+              <td class="favorite__td favorite__td--value">15&nbsp;см</td>
+            </tr>
+          </table>
+        </div>
+        <figure class="favorite__figure">
+          <picture>
+            <source type="image/webp" media="(min-width: 1150px)" srcset="img/triple-set-desktop@1x.webp 1x, img/triple-set-desktop@2x.webp 2x">
+            <source type="image/webp" media="(min-width: 768px)" srcset="img/triple-set-tablet@1x.webp 1x, img/triple-set-tablet@2x.webp 2x">
+            <source type="image/webp" srcset="img/triple-set-mobile@1x.webp 1x, img/triple-set-mobile@2x.webp 2x">
 
-              <source media="(min-width: 1150px)" srcset="img/triple-set-desktop@1x.jpg 1x, img/triple-set-desktop@2x.jpg 2x">
-              <source media="(min-width: 768px)" srcset="img/triple-set-tablet@1x.jpg 1x, img/triple-set-tablet@2x.jpg 2x">
-              <img class="special-product__illustration-image" src="img/triple-set-mobile@1x.jpg" srcset="img/triple-set-mobile@2x.jpg 2x" alt="Изображение товара">
-            </picture>
-          </figure>
-          <div class="special-product__buy">
-            <p class="special-product__price">Цена: 990 руб.</p>
-            <a class="special-product__button button button--special-product" href="#">Заказать</a>
-          </div>
+            <source media="(min-width: 1150px)" srcset="img/triple-set-desktop@1x.jpg 1x, img/triple-set-desktop@2x.jpg 2x">
+            <source media="(min-width: 768px)" srcset="img/triple-set-tablet@1x.jpg 1x, img/triple-set-tablet@2x.jpg 2x">
+            <img class="favorite__image" src="img/triple-set-mobile@1x.jpg" srcset="img/triple-set-mobile@2x.jpg 2x" alt="Три вязаных корзинки: крупного, среднего и небольшого размера">
+          </picture>
+        </figure>
+        <div class="favorite__buy">
+          <p class="favorite__price">Цена: 990&nbsp;руб.</p>
+          <a class="favorite__button button button--favorite" href="#">Заказать</a>
         </div>
       </section>
 
       <section class="about">
-        <h2 class="about__title">Коротко о нас:</h2>
+        <h2 class="about__title">Коротко о&nbsp;нас:</h2>
         <ul class="about__list">
           <li class="about__item about__item--ecol">Экологически чистые&nbsp;материалы</li>
           <li class="about__item about__item--style">Скандинавский стиль по&nbsp;российской цене</li>
@@ -143,103 +139,144 @@
 
       <section class="reviews">
         <h2 class="reviews__title">Отзывы</h2>
-        <div class="reviews__list">
-          <blockquote class="reviews__item">
-            <p class="reviews__text">Я молодая мама, но всё равно фотографии не набирали и близко такого количества лайков, как у популярных инстамамочек. В отчаянии, я накупила аксессуаров и игрушек в Мишке, и&nbsp;мои фотографии сразу стали более стильными, а также набирают больше лайков!</p>
-            <cite class="reviews__author-info">
-              <b class="reviews__author-name">Анастасия Красильникова</b>
-              <a class="reviews__author-insta-link" href="#">@misssssiskras</a>
-            </cite>
-          </blockquote>
+        <div class="reviews__slider slider">
+          <div class="slider__inner">
+            <ul class="slider__list slider__list--show-1">
+              <li class="slider__item">
+                <blockquote class="reviews__blockquote">
+                  <p class="reviews__text">Я молодая мама, но всё равно фотографии не набирали и близко такого количества лайков, как у популярных инстамамочек. В отчаянии, я накупила аксессуаров и игрушек в Мишке, и&nbsp;мои фотографии сразу стали более стильными, а также набирают больше лайков!</p>
+                  <cite class="reviews__author">
+                    <b class="reviews__name">Анастасия Красильникова</b>
+                    <a class="reviews__social-link" href="https://www.instagram.com">@misssssiskras</a>
+                  </cite>
+                </blockquote>
+              </li>
+              <li class="slider__item">
+                <blockquote class="reviews__blockquote">
+                  <p class="reviews__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error optio eligendi itaque dolorem asperiores iure in assumenda nostrum earum. Odio, ab, maxime. Nisi et sequi, hic doloremque consectetur quam modi.</p>
+                  <cite class="reviews__author">
+                    <b class="reviews__name">Lorem ipsum</b>
+                    <a class="reviews__social-link" href="https://www.instagram.com" tabindex="-1">@loremipsum</a>
+                  </cite>
+                </blockquote>
+              </li>
+              <li class="slider__item">
+                <blockquote class="reviews__blockquote">
+                  <p class="reviews__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, hic unde officia amet, natus temporibus facilis explicabo, repudiandae itaque ducimus, tempora. Quasi inventore totam, maiores, dolorum consequuntur iure, error vel labore aliquid nemo consequatur, dignissimos iste.</p>
+                  <cite class="reviews__author">
+                    <b class="reviews__name">Lorem ipsum</b>
+                    <a class="reviews__social-link" href="https://www.instagram.com" tabindex="-1">@loremipsum</a>
+                  </cite>
+                </blockquote>
+              </li>
+            </ul>
+          </div>
+          <p class="slider__buttons">
+            <button class="slider__button slider__button--prev" type="button" name="review-prev" disabled>
+              <span class="visually-hidden">Предыдущий отзыв</span>
+            </button>
+            <button class="slider__button slider__button--next" type="button" name="review-next">
+              <span class="visually-hidden">Следующий отзыв</span>
+            </button>
+          </p>
         </div>
-        <p class="reviews__toggles">
-          <button class="reviews__toggle reviews__toggle--previous" type="button" name="review-prev">
-            <span class="visually-hidden">Предыдущий отзыв</span>
-          </button>
-          <button class="reviews__toggle reviews__toggle--next" type="button" name="review-next">
-            <span class="visually-hidden">Следующий отзыв</span>
-          </button>
-        </p>
         <a class="reviews__button button button--reviews" href="#">Написать</a>
       </section>
 
       <section class="contacts">
-        <div class="contacts__text">
+        <div class="contacts__text-wrapper">
           <h2 class="contacts__title">Контакты</h2>
-          <p class="contacts__email">
-            <span class="contacts__field">e-mail:</span>
-            <a class="contacts__value contacts__value--link" href="mailto:info@mimimishkashop.ru">info@mimimishkashop.ru</a>
-          </p>
-          <p class="contacts__address">
-            <span class="contacts__field">адрес:</span>
-            <span class="contacts__value">г.&nbsp;Санкт-Петербург, ул.&nbsp;Большая Конюшенная, д.&nbsp;19/8,&nbsp;офис 101</span>
-          </p>
+          <dl class="contacts__list">
+            <dt class="contacts__term">e-mail:</dt>
+            <dd class="contacts__value">
+              <a class="contacts__link" href="mailto:info@mimimishkashop.ru">info@mimimishkashop.ru</a>
+            </dd>
+          </dl>
+          <dl class="contacts__list">
+            <dt class="contacts__term">адрес:</dt>
+            <dd class="contacts__value">г.&nbsp;Санкт-Петербург, ул.&nbsp;Большая Конюшенная, д.&nbsp;19/8,&nbsp;офис 101</dd>
+          </dl>
         </div>
-        <div class="contacts__map-wrapper">
-          <div class="contacts__map"></div>
+
+        <div class="contacts__map map">
+          <p class="map__illustration">
+            <picture>
+              <source type="image/webp" media="(min-width: 1150px)" srcset="img/map-desktop@1x.webp 1x, img/map-desktop@2x.webp 2x">
+              <source type="image/webp" media="(min-width: 768px)" srcset="img/map-tablet@1x.webp 1x, img/map-tablet@2x.webp 2x">
+              <source type="image/webp" srcset="img/map-mobile@1x.webp 1x, img/map-mobile@2x.webp 2x">
+
+              <source media="(min-width: 1150px)" srcset="img/map-desktop@1x.jpg 1x, img/map-desktop@2x.jpg 2x">
+              <source media="(min-width: 768px)" srcset="img/map-tablet@1x.jpg 1x, img/map-tablet@2x.jpg 2x">
+              <img class="map__image" src="img/map-mobile@1x.jpg" srcset="img/map-mobile@2x.jpg 2x" alt="Офис «Мишки» на карте">
+            </picture>
+          </p>
+          <p class="map__interactive map__interactive--hidden" aria-label="«Мишка» на карте Google"></p>
         </div>
+
         <a class="contacts__button button button--contacts" href="#">Напишите нам</a>
       </section>
     </main>
 
-    <footer class="page-footer">
-      <a class="page-footer__logo logo logo--footer" aria-label="Логотип интернет-магазина «Мишка»">
-        <svg class="logo__image logo__image--footer" width="102" height="34" fill="currentColor" role="img" focusable="false">
-          <use xlink:href="#for-s-logo-footer"></use>
-        </svg>
-      </a>
-      <ul class="page-footer__social-list social-list">
-        <li class="social-list__item">
-          <a class="social-list__link social-list__link--instagram" href="https://www.instagram.com" aria-label="Мы в Инстаграме">
-            <svg class="social-list__icon social-list__icon--instagram" width="22" height="21" fill="currentColor" aria-hidden="true" focusable="false">
-              <use xlink:href="#for-s-icon-insta"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="social-list__item">
-          <a class="social-list__link social-list__link--facebook" href="https://www.facebook.com" aria-label="Мы в Фейсбуке">
-            <svg class="social-list__icon social-list__icon--facebook" width="15" height="28" fill="currentColor" aria-hidden="true" focusable="false">
-              <use xlink:href="#for-s-icon-fb"></use>
-            </svg>
-          </a>
-        </li>
-        <li class="social-list__item">
-          <a class="social-list__link social-list__link--twitter" href="https://twitter.com" aria-label="Мы в Твиттере">
-            <svg class="social-list__icon social-list__icon--twitter" width="24" height="20" fill="currentColor" aria-hidden="true" focusable="false">
-              <use xlink:href="#for-s-icon-twitter"></use>
-            </svg>
-          </a>
-        </li>
-      </ul>
-      <a class="page-footer__copyright copyright" href="https://htmlacademy.ru/intensive/adaptive" aria-label="Разработано в HTML Academy: переход на сайт">
-        <b class="copyright__text">Разработано</b>
-        <span class="copyright__logo">
-          <svg class="copyright__logo-image" width="27" height="34" fill="currentColor" role="img" focusable="false">
-            <use xlink:href="#for-s-logo-htmlacademy"></use>
+    <footer class="page-footer" role="contentinfo">
+      <div class="page-footer__wrapper">
+        <a class="page-footer__logo logo logo--footer" aria-label="Логотип интернет-магазина «Мишка»">
+          <svg class="logo__image logo__image--footer" width="102" height="34" role="img" focusable="false">
+            <use xlink:href="#for-s-logo-footer" aria-hidden="true"></use>
           </svg>
-        </span>
-      </a>
-    </footer>
-
-    <section class="modal">
-      <h2 class="modal__title">Добавить в&nbsp;корзину</h2>
-      <form class="modal__form modal-form" action="https://echo.htmlacademy.ru" method="post">
-        <p class="modal-form__legend">Выберите размер:</p>
-        <ul class="modal-form__list">
-          <li class="modal-form__item">
-            <input class="modal-form__radio visually-hidden" type="radio" name="size" id="size-s" value="size-s" checked>
-            <label class="modal-form__radio-label" for="size-s">S</label>
+        </a>
+        <ul class="page-footer__social-list social-list">
+          <li class="social-list__item">
+            <a class="social-list__link social-list__link--instagram" href="https://www.instagram.com" aria-label="Мы в Инстаграме">
+              <svg class="social-list__icon social-list__icon--instagram" width="22" height="21" aria-hidden="true" focusable="false">
+                <use xlink:href="#for-s-icon-insta"></use>
+              </svg>
+            </a>
           </li>
-          <li class="modal-form__item">
-            <input class="modal-form__radio visually-hidden" type="radio" name="size" id="size-m" value="size-m">
-            <label class="modal-form__radio-label" for="size-m">M</label>
+          <li class="social-list__item">
+            <a class="social-list__link social-list__link--facebook" href="https://www.facebook.com" aria-label="Мы в Фейсбуке">
+              <svg class="social-list__icon social-list__icon--facebook" width="15" height="28" aria-hidden="true" focusable="false">
+                <use xlink:href="#for-s-icon-fb"></use>
+              </svg>
+            </a>
           </li>
-          <li class="modal-form__item">
-            <input class="modal-form__radio visually-hidden" type="radio" name="size" id="size-l" value="size-l">
-            <label class="modal-form__radio-label" for="size-l">L</label>
+          <li class="social-list__item">
+            <a class="social-list__link social-list__link--twitter" href="https://twitter.com" aria-label="Мы в Твиттере">
+              <svg class="social-list__icon social-list__icon--twitter" width="24" height="20" aria-hidden="true" focusable="false">
+                <use xlink:href="#for-s-icon-twitter"></use>
+              </svg>
+            </a>
           </li>
         </ul>
-        <button class="modal-form__button button button--modal" type="submit">Добавить</button>
+        <a class="page-footer__copyright copyright" href="https://htmlacademy.ru/intensive/adaptive" aria-label="Разработано в HTML Academy: переход на сайт">
+          <b class="copyright__text">Разработано</b>
+          <span class="copyright__logo">
+            <svg class="copyright__logo-image" width="27" height="34" role="img" focusable="false">
+              <use xlink:href="#for-s-logo-htmlacademy" aria-hidden="true"></use>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </footer>
+
+    <section class="modal" role="dialog" aria-labelledby="cart-modal-title">
+      <h2 class="modal__title" id="cart-modal-title">Добавить в&nbsp;корзину</h2>
+      <form class="modal__form size-form" action="https://echo.htmlacademy.ru" method="post">
+        <p class="size-form__description">Выберите размер:</p>
+        <ul class="size-form__list">
+          <li class="size-form__item">
+            <input class="size-form__radio visually-hidden" type="radio" name="size" id="size-s" value="size-s" checked>
+            <label class="size-form__radio-label" for="size-s">S</label>
+          </li>
+          <li class="size-form__item">
+            <input class="size-form__radio visually-hidden" type="radio" name="size" id="size-m" value="size-m">
+            <label class="size-form__radio-label" for="size-m">M</label>
+          </li>
+          <li class="size-form__item">
+            <input class="size-form__radio visually-hidden" type="radio" name="size" id="size-l" value="size-l">
+            <label class="size-form__radio-label" for="size-l">L</label>
+          </li>
+        </ul>
+        <button class="size-form__button button button--size-form" type="submit">Добавить</button>
       </form>
     </section>
     <div class="overlay"></div>
