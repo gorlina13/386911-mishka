@@ -44,34 +44,17 @@
 
 @media (min-width: @tablet-width) {
   .logo {
-    width: 217px;
-
     &--main-nav {
       width: 28.255%;
-      padding-top: 22px;
-      padding-bottom: 20px;
-      padding-left: 6.38%;
-      padding-right: 6.38%;
+      padding: 22px 6.38% 20px;
 
       border: none;
     }
 
     &--footer {
-      display: flex;
-
-      padding: 50px;
-
-      color: #231f20;
-    }
-
-    &--footer[href]:hover,
-    &--footer:focus,
-    &--footer[href]:active {
-      color: #46c1ae;
-    }
-
-    &--footer[href]:active {
-      opacity: 0.3;
+      display: block;
+      width: 33.3333%;
+      padding: 51px 6.5104% 58px;
     }
   }
 
@@ -86,8 +69,18 @@
       display: block;
       width: 102px;
       height: 34px;
-      margin-bottom: 8px;
-      margin-right: auto;
+
+      fill: #231f20;
+    }
+
+    .logo[href]:hover &--footer,
+    .logo:focus &--footer,
+    .logo[href]:active &--footer {
+      fill: #46c1ae;
+    }
+
+    .logo[href]:active &--footer {
+      opacity: 0.3;
     }
   }
 }
@@ -100,7 +93,8 @@
     }
 
     &--footer {
-      width: 225px;
+      padding-left: 4.3478%;
+      padding-right: 4.3478%;
     }
   }
 
