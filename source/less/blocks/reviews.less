@@ -29,11 +29,22 @@
 }
 
 .reviews__blockquote {
+  flex-shrink: 0;
+  flex-basis: auto;
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  max-width: 100%;
   margin: 0;
   padding-bottom: 28px;
 }
 
 .reviews__text {
+  flex-shrink: 0;
+  flex-basis: auto;
+
+  max-width: 100%;
   margin: 0;
   margin-bottom: 27px;
 
@@ -43,7 +54,12 @@
 }
 
 .reviews__author {
+  flex-shrink: 0;
+  flex-basis: auto;
+
   display: block;
+  max-width: 100%;
+  margin-top: auto;
 
   font-style: normal;
 }
@@ -65,13 +81,8 @@
   cursor: pointer;
 }
 
-.reviews__button {
-  width: 100%;
-}
-
 @media (min-width: 426px) and (max-width: @mobile-width-only) {
   .reviews__button {
-    max-width: 292px;
     margin: 0 auto;
   }
 }
@@ -115,7 +126,6 @@
     flex-basis: auto;
     order: 2;
 
-    width: 26.1976%;
     margin-top: 2px;
   }
 
@@ -173,7 +183,6 @@
   }
 
   .reviews__button {
-    width: 16.6666%;
     margin-top: 9px;
   }
 
