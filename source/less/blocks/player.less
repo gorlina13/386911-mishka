@@ -1,0 +1,264 @@
+.player {
+  margin-bottom: 58px;
+  padding: 0 9.375%;
+}
+
+.player__wrapper {
+  &:hover {
+    box-shadow: 0 6px 10px 0 fade(@body-color, 10%);
+  }
+
+  &:active {
+    box-shadow: 0 3px 5px 0 fade(@body-color, 10%);
+  }
+}
+
+.player__title {
+  position: relative;
+
+  min-height: 73px;
+  margin: 0;
+  padding: 24px 12.6923%;
+  padding-left: 34.2308%;
+
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: 700;
+
+  border: 1px solid @border-color;
+  border-bottom: none;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    left: 12.6923%;
+    top: 0;
+    bottom: 4px;
+
+    width: 32px;
+    height: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+
+    background-image: url("../img/icon-video.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 32px 32px;
+  }
+}
+
+.player__inner {
+  padding: 27px 12.6923% 32px;
+
+  border: 1px solid @border-color;
+  border-top: none;
+}
+
+.player__description {
+  margin: 0;
+  margin-bottom: 25px;
+
+  font-size: 13px;
+  color: @second-color;
+}
+
+.player__button {
+  margin: 0 auto;
+}
+
+@media (min-width: @tablet-width) {
+  .player {
+    margin-bottom: 63px;
+    padding: 0 6.5104%;
+  }
+
+  .player__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .player__title {
+    flex-shrink: 0;
+    flex-basis: auto;
+    order: 2;
+
+    min-height: 94px;
+    padding: 37px 6.1377% 32px;
+    padding-left: 15.7186%;
+
+    font-size: 20px;
+
+    &::before {
+      left: 6.1377%;
+      top: 2px;
+      bottom: 0;
+    }
+  }
+
+  .player__video {
+    flex-shrink: 0;
+    flex-basis: auto;
+  }
+
+  .player__inner {
+    flex-shrink: 0;
+    flex-basis: auto;
+    order: 2;
+
+    padding: 0 6.1377% 45px;
+  }
+
+  .player__description {
+    margin-bottom: 35px;
+
+    font-size: 15px;
+    line-height: 30px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .player {
+    position: relative;
+
+    max-width: @desktop-width;
+    margin: 0 auto;
+    margin-bottom: 105px;
+    padding: 0 50px;
+
+    &::before,
+    &::after {
+      content: "";
+
+      position: absolute;
+      left: 50px;
+      right: 50px;
+
+      width: auto;
+      height: 1px;
+
+      background-color: @border-color;
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+      z-index: -1;
+    }
+  }
+
+  .player__wrapper {
+    position: relative;
+
+    display: block;
+
+    border-right: 1px solid @border-color;
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      top: 1px;
+      bottom: 1px;
+      left: 0;
+
+      width: 1px;
+      height: auto;
+
+      background-color: @border-color;
+    }
+
+    &::after {
+      content: "";
+
+      display: table;
+
+      clear: both;
+    }
+  }
+
+  .player__title {
+    float: right;
+    width: 30.0952%; // 316 / 1050
+    min-height: none;
+
+    padding-top: 96px;
+    padding-bottom: 32px;
+    padding-left: 2.4762%; // 26 / 1050
+    padding-right: 5.5238%; // 58 / 1050
+
+    border: none;
+
+    &::before {
+      top: 42px;
+      bottom: auto;
+      left: 8.8608%;
+
+      height: 32px;
+      margin: 0;
+
+      background-position: center top;
+    }
+  }
+
+  .player__video {
+    float: left;
+  }
+
+  .player__inner {
+    float: right;
+    width: 30.0952%; // 316 / 1050
+    padding-bottom: 30px;
+    padding-left: 2.4762%; // 26 / 1050
+    padding-right: 4%;
+
+    border: none;
+  }
+
+  .player__description {
+    margin-bottom: 47px;
+  }
+
+  .player__button {
+    margin: 0;
+    margin-left: 2px;
+  }
+
+  @supports (display: grid) {
+    .player__title {
+      grid-area: title;
+
+      width: auto;
+      padding-left: 8.2278%; // 26 / 316
+      padding-right: 18.3544%; // 58 / 316
+    }
+
+    .player__video {
+      grid-area: video;
+    }
+
+    .player__inner {
+      grid-area: inner;
+
+      width: auto;
+      padding-left: 8.2278%; // 26 / 316
+      padding-right: 16%;
+    }
+
+    .player__wrapper {
+      display: grid;
+      align-items: start;
+      align-content: start;
+      grid-column-gap: 51px;
+      grid-template-columns: [video-start] repeat(2, minmax(0, 1fr)) [video-end title-start inner-start] minmax(0, 1fr) [title-end inner-end];
+      grid-template-rows: [video-start title-start] min-content [title-end inner-start] min-content [inner-end] min-content [video-end];
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
