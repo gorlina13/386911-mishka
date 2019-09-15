@@ -80,21 +80,7 @@
 }
 
 .contacts__button {
-  width: 81.25%;
-  margin: 0 9.375%;
-}
-
-@media (min-width: 426px) {
-  .contacts__button {
-    width: 100%;
-    margin: 0 auto;
-  }
-}
-
-@media (min-width: 426px) and (max-width: @mobile-width-only) {
-  .contacts__button {
-    max-width: 292px;
-  }
+  margin: 0 auto;
 }
 
 @media (min-width: @tablet-width) {
@@ -131,7 +117,7 @@
       width: 4px;
       height: 81px;
 
-      background-color: #221f1f;
+      background-color: @icon-color;
     }
 
     &::after {
@@ -176,10 +162,6 @@
 
   .contacts__map {
     margin-bottom: 55px;
-  }
-
-  .contacts__button {
-    width: 230px;
   }
 }
 
