@@ -1,5 +1,6 @@
 .button {
   display: block;
+  width: 100%;
   padding: 14px 10px;
 
   font-weight: 700;
@@ -10,34 +11,9 @@
   text-transform: uppercase;
   color: @second-color;
 
-  background-color: #ffffff;
+  background-color: @body-background-color;
   border: 2px solid @second-color;
   cursor: pointer;
-
-  &--favorite,
-  &--size-form {
-    padding: 14px 4%;
-  }
-
-  &--reviews,
-  &--contacts {
-    padding: 14px 2%;
-  }
-
-  &--order-form {
-    width: 260px;
-  }
-
-  &--make-an-order {
-    width: 192px;
-  }
-
-  &--favorite,
-  &--size-form,
-  &--order-form,
-  &--make-an-order {
-    font-size: inherit;
-  }
 
   &:hover,
   &:focus,
@@ -47,15 +23,40 @@
 
   &:hover,
   &:focus {
-    color: #ffffff;
+    color: @body-background-color;
   }
 
   &:active {
-    color: fade(#ffffff, 30%);
+    color: fade(@body-background-color, 30%);
+  }
+
+  &--favorite,
+  &--size-form,
+  &--after-player {
+    padding: 14px 4%;
+  }
+
+  &--reviews,
+  &--contacts,
+  &--order-form {
+    padding: 14px 2%;
+  }
+
+  &--favorite,
+  &--size-form,
+  &--order-form,
+  &--after-player {
+    font-size: inherit;
+  }
+
+  &--contacts {
+    width: 81.25%;
   }
 
   &--size-form {
-    color: #ffffff;
+    width: 260px;
+
+    color: @body-background-color;
 
     background-color: @mishka-color;
     border-color: transparent;
@@ -64,7 +65,7 @@
   &--size-form:hover,
   &--size-form:focus,
   &--size-form:active {
-    background-color: #ffffff;
+    background-color: @body-background-color;
     border-color: @mishka-color;
   }
 
@@ -78,24 +79,46 @@
   }
 }
 
+@media (min-width: 426px) and (max-width: @mobile-width-only) {
+  .button {
+    max-width: 426px;
+
+    &--after-player {
+      max-width: 100%;
+    }
+  }
+}
+
 @media (min-width: @tablet-width) {
   .button {
     font-size: inherit;
+
+    &--reviews {
+      width: 26.1976%;
+    }
+
+    &--contacts {
+      width: 230px;
+    }
+
+    &--size-form {
+      width: 350px;
+    }
 
     &--order-form {
       width: 230px;
     }
 
-    &--make-an-order {
-      width: 584px;
+    &--after-player {
+      max-width: 230px;
     }
   }
 }
 
 @media (min-width: @desktop-width) {
   .button {
-    &--make-an-order {
-      width: 230px;
+    &--reviews {
+      width: 16.6666%;
     }
   }
 }
