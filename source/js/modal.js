@@ -1,6 +1,6 @@
 'use strict';
 
-var button = document.querySelector('.special-product__button');
+var button = document.querySelector('.favorite__button');
 var itemsToCart = document.querySelectorAll('.product__cart');
 var overlay = document.querySelector('.overlay');
 var modal = document.querySelector('.modal');
@@ -23,13 +23,13 @@ function hideModal() {
   }
 }
 
-if (button) {
+if (button !== null) {
   button.addEventListener('click', function (evt) {
     showModal(evt);
   });
 }
 
-if (itemsToCart) {
+if (itemsToCart.length > 0) {
   [].forEach.call(itemsToCart, function (item) {
     item.addEventListener('click', function (evt) {
       showModal(evt);
