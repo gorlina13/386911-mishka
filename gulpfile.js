@@ -19,6 +19,7 @@ var uglify = require("gulp-uglify");
 var pipeline = require("readable-stream").pipeline;
 var sourcemaps = require("gulp-sourcemaps");
 var gulpIf = require("gulp-if");
+var ghPages = require('gh-pages');
 
 var isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == "development";
 
@@ -118,6 +119,10 @@ function watch() {
   gulp.watch("source/js/**/*.js", gulp.series(js, reload));
 }
 
+function deploy(done) {
+  ghPages.publish("build", done);
+}
+
 exports.style = style;
 exports.clean = clean;
 exports.copy = copy;
@@ -141,3 +146,4 @@ exports.default = gulp.series(
   )
 );
 exports.dev = gulp.series(serve, watch);
+exports.deploy = deploy;
