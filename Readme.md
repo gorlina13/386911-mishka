@@ -2,7 +2,7 @@
 
 * Студент: [Ольга Баженова](https://up.htmlacademy.ru/adaptive/13/user/386911).
 * Наставник: `Без наставника`.
-* Сайт опубликован: (https://gorlina13.github.io/386911-mishka/).
+* Сайт [опубликован](https://gorlina13.github.io/386911-mishka/).
 
 ---
 
