@@ -121,7 +121,7 @@
         </figure>
         <div class="favorite__buy">
           <p class="favorite__price">Цена: 990&nbsp;руб.</p>
-          <a class="favorite__button button button--favorite" href="#">Заказать</a>
+          <a class="favorite__button button button--favorite" href="#" aria-haspopup="dialog">Заказать</a>
         </div>
       </section>
 
@@ -171,7 +171,7 @@
               </li>
             </ul>
           </div>
-          <ul class="slider__buttons" aria-label="Кнопки слайдера">
+          <ul class="slider__buttons">
             <li>
               <button class="slider__button slider__button--prev" type="button" name="review-prev" disabled>
                 <span class="visually-hidden">Предыдущий отзыв</span>
@@ -214,7 +214,7 @@
               <img class="map__image" src="img/map-mobile@1x.jpg" srcset="img/map-mobile@2x.jpg 2x" alt="Офис «Мишки» на карте">
             </picture>
           </p>
-          <p class="map__interactive map__interactive--hidden" aria-label="«Мишка» на карте Google"></p>
+          <p class="map__interactive map__interactive--hidden" role="region" aria-label="«Мишка» на карте Google"></p>
         </div>
 
         <a class="contacts__button button button--contacts" href="#">Напишите нам</a>
@@ -223,8 +223,8 @@
 
     <footer class="page-footer" role="contentinfo">
       <div class="page-footer__wrapper">
-        <a class="page-footer__logo logo logo--footer" aria-label="Логотип интернет-магазина «Мишка»">
-          <svg class="logo__image logo__image--footer" width="102" height="34" role="img" focusable="false">
+        <a class="page-footer__logo logo logo--footer">
+          <svg class="logo__image logo__image--footer" width="102" height="34" role="img" aria-label="Логотип интернет-магазина «Мишка»" focusable="false">
             <use xlink:href="#for-s-logo-footer" aria-hidden="true"></use>
           </svg>
         </a>
